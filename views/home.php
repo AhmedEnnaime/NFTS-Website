@@ -524,8 +524,11 @@ $collections = $data->getAllCollections();
                     <div class="heroBox__wrapper">
                         
                         <div class="heroBox--item">
-                            <i class="fa-solid fa-photo-film"></i>
+                            <a href="./add.php" style="text-align: center;">
+                            <i class="fa-solid fa-photo-film" style="margin-bottom:20px ;"></i>
                             <h3>Create Your Collection</h3>
+                            </a>
+                            
                             <p>
                                 Click Create and set up your collection. Add
                                 social links, a description, profile & banner
@@ -533,8 +536,11 @@ $collections = $data->getAllCollections();
                             </p>
                         </div>
                         <div class="heroBox--item">
-                            <i class="fa-solid fa-image"></i>
-                            <h3>Add Your NFTs</h3>
+                            <a href="./add.php" style="text-align: center;">
+                                <i class="fa-solid fa-image" style="margin-bottom:20px ;"></i>
+                                <h3>Add Your NFTs</h3>
+                            </a>
+                            
                             <p>
                                 Upload your work (image, video, audio, or 3D
                                 art), add a title and description, and customize
@@ -550,10 +556,14 @@ $collections = $data->getAllCollections();
                     <div class="auction__wrapper">
                         <div class="auction__top">
                             <h2>Collections available</h2>
-                            <a href="#">Add more</a>
+                            <a href="./add.php">Add more</a>
                         </div>
                         <div class="auction__bottom">
-                            <div class="auction--item">
+                            <?php
+                            foreach($collections as $collection){
+                                
+                                echo '
+                                <div class="auction--item">
                                 <div class="auction__card">
                                     <div class="auction__card--media">
                                         <a href="#">
@@ -575,8 +585,8 @@ $collections = $data->getAllCollections();
                                     <div class="auction__card--title">
                                         <h5>
                                             <a href="#"
-                                                >"Hamlet Contemplates
-                                                Yorick's...</a
+                                                > '.$collection['name'].'
+                                                </a
                                             >
                                         </h5>
                                     </div>
@@ -585,156 +595,35 @@ $collections = $data->getAllCollections();
                                             <div class="auction__author--info">
                                                 <span>Creator</span>
                                                 <h6>
-                                                    <a href="#">SalvadorDali</a>
+                                                    <a href="#">'.$collection['artiste'].'</a>
                                                 </h6>
                                             </div>
                                         </div>
+                                        <form action="">
+                                            <input type="hidden" value="'.$collection['id'].'">
+                                            <div class="auction__info--tag">
+                                                <a href="">delete</a>
+                                            </div>
+                                            
+                                        </form>
+                                        <form action="">
+                                            <input type="hidden" value="'.$collection['id'].'">
+                                            <div class="auction__info--tag">
+                                                <a href="">update</a>
+                                            </div>
+                                            
+                                        </form>
                                     </div>
                                     
                                 </div>
                             </div>
-                            <div class="auction--item">
-                                <div class="auction__card">
-                                    <div class="auction__card--media">
-                                        <a href="#">
-                                            <img
-                                                src="image/03_Live Auctions/image-box-10.jpg"
-                                                alt=""
-                                            />
-                                        </a>
-                                        <div class="auction__media--BtnBid">
-                                            <a href="#">
-                                                <i
-                                                    class="fa-solid fa-eye"
-                                                ></i
-                                                >View NFTS</a
-                                            >
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="auction__card--title">
-                                        <h5>
-                                            <a href="#"
-                                                >"Hamlet Contemplates
-                                                Yorick's...</a
-                                            >
-                                        </h5>
-                                    </div>
-                                    <div class="auction__card--info">
-                                        <div class="auction__info--author">
-                                            <div class="auction__author--info">
-                                                <span>Creator</span>
-                                                <h6>
-                                                    <a href="#">SalvadorDali</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="auction--item">
-                                <div class="auction__card">
-                                    <div class="auction__card--media">
-                                        <a href="#">
-                                            <img
-                                                src="image/03_Live Auctions/image-box-11.jpg"
-                                                alt=""
-                                            />
-                                        </a>
-                                        <div class="auction__media--BtnBid">
-                                            <a href="#">
-                                                <i
-                                                    class="fa-solid fa-eye"
-                                                ></i
-                                                >View NFTS</a
-                                            >
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="auction__card--title">
-                                        <h5>
-                                            <a href="#"
-                                                >"Hamlet Contemplates
-                                                Yorick's...</a
-                                            >
-                                        </h5>
-                                    </div>
-                                    <div class="auction__card--info">
-                                        <div class="auction__info--author">
-                                        
-                                            <div class="auction__author--info">
-                                                <span>Creator</span>
-                                                <h6>
-                                                    <a href="#">SalvadorDali</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="auction--item">
-                                <div class="auction__card">
-                                    <div class="auction__card--media">
-                                        <a href="#">
-                                            <img
-                                                src="image/03_Live Auctions/image-box-21.jpg"
-                                                alt=""
-                                            />
-                                        </a>
-                                        <div class="auction__media--BtnBid">
-                                            <a href="#">
-                                                <i
-                                                    class="fa-solid fa-eye"
-                                                ></i
-                                                >View NFTS</a
-                                            >
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="auction__card--title">
-                                        <h5>
-                                            <a href="#"
-                                                >"Hamlet Contemplates
-                                                Yorick's...</a
-                                            >
-                                        </h5>
-                                    </div>
-                                    <div class="auction__card--info">
-                                        <div class="auction__info--author">
-                                           
-                                            <div class="auction__author--info">
-                                                <span>Creator</span>
-                                                <h6>
-                                                    <a href="#">SalvadorDali</a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="auction__pagination">
-                            <a href="#"
-                                ><i class="fa-solid fa-arrow-left"></i
-                            ></a>
-                            <div class="pagination__btns">
-                                <div class="pagination__page"></div>
-                                <div class="pagination__page"></div>
-                                <div class="pagination__page"></div>
-                                <div class="pagination__page"></div>
-                                <div
-                                    class="pagination__page pagination__page--active"
-                                ></div>
-                                <div class="pagination__page"></div>
-                                <div class="pagination__page"></div>
-                                <div class="pagination__page"></div>
-                                <div class="pagination__page"></div>
-                            </div>
-                            <a href="#"
-                                ><i class="fa-solid fa-arrow-right"></i
-                            ></a>
+                                
+                                ';    
+                            
+                            }
+
+                            ?>
+                           
                         </div>
                     </div>
                 </div>
