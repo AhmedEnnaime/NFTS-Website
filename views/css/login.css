@@ -1,0 +1,135 @@
+body {
+    background-color: #292f45;
+}
+.login__wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 1rem;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+}
+.login__item--left img {
+    width: 100%;
+    height: 100%;
+}
+.login__item--right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 8rem;
+}
+.login--form {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.login--title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--login-color);
+    font-size: 3rem;
+    background: linear-gradient(-45deg, #a450e5, #4b50e6);
+    color: #292f45;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px transparent;
+    padding: 1rem;
+}
+.login--form label {
+    color: var(--login-color);
+}
+.login--form input {
+    transition: all 1.5s ease;
+}
+.login--form input:not(:last-of-type) {
+    border: 0.2rem solid #38405b;
+    background: transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    transition: all 1.5s ease;
+    color: var(--primary-font);
+}
+.login--form input::placeholder {
+    color: #60667c;
+}
+.btn_sign {
+    background-color: var(--blue) !important;
+    color: var(--primary-font) !important;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.login--form input:not(:last-of-type):focus {
+    border-bottom-color: #5142fca6;
+}
+.btn_sign:hover {
+    transition: all 1.5s ease;
+    -webkit-filter: brightness(70%);
+    border-radius: 2rem;
+}
+.login--createAccount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+.login--createAccount p {
+    color: var(--login-color);
+}
+.login--createAccount a {
+    color: #6867ae;
+}
+.line-center {
+    margin: 0;
+    padding: 0 10px;
+    background: #292f45;
+    display: inline-block;
+}
+.login--createAccount--items h5 {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: var(--login-color);
+    font-weight: 200;
+}
+.login--createAccount--items h5:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: solid 0.2rem #38405b;
+    z-index: -1;
+}
+.login--createAccount--items:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+.footer--socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.footer--social-item:nth-child(1) {
+    background-color: #4faaef;
+}
+.footer--social-item:nth-child(2) {
+    background-color: #3e5998;
+}
+.footer--social-item:nth-child(3) {
+    background-color: red;
+}
+.footer--social-item:nth-child(4) {
+    background-color: #4c4b49;
+}

@@ -1,0 +1,381 @@
+#auction {
+    background-color: var(--bg-darker);
+    padding: 7rem 0;
+}
+.auction__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.auction__top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.auction__top h2 {
+    color: var(--primary-font);
+    font-size: 3.4rem;
+}
+.auction__top a {
+    position: relative;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: linear-gradient(
+        to right,
+        #e250e5,
+        #4b50e6 50%,
+        var(--primary-font) 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    background-clip: text;
+    display: inline-block;
+}
+.auction__top a:hover {
+    background-position: 0 100%;
+}
+.auction__top a::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(216.56deg, #e250e5 5.32%, #4b50e6 94.32%);
+}
+.auction__bottom {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.auction--item {
+    background-color: #343444;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 1.6rem;
+    border-radius: 1.5rem;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+.auction__card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.auction__card--media img {
+    border-radius: 1.5rem;
+    width: 100%;
+    height: auto;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.auction__card--title a {
+    color: var(--primary-font) !important;
+    font-size: 1.8rem;
+    background: linear-gradient(
+        to right,
+        #e250e5,
+        #4b50e6 50%,
+        var(--primary-font) 50%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+}
+.auction__card--title a:hover {
+    background-position: 0 100%;
+}
+.auction__card--info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--bg-darker);
+}
+.auction__author--info span {
+    color: #e2e2e2;
+    font-size: 1.3rem;
+}
+.auction__author--info h6 a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+.auction__info--author {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.auction__author--info a,
+.auction__price--details a,
+.pick__history a {
+    background: linear-gradient(
+        to right,
+        #e250e5,
+        #4b50e6 50%,
+        var(--primary-font) 50%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    font-weight: bolder;
+}
+.auction__author--info a:hover,
+.auction__price--details a:hover,
+.pick__history a:hover {
+    background-position: 0 100%;
+}
+.pick__history a:hover i {
+    transition: all 0.7s ease-in-out;
+    animation: history 1s ease;
+    background: linear-gradient(to right, #e250e5, #4b50e6 200%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes history {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+.auction__author--avatar img {
+    border-radius: 1.5rem;
+    height: clamp(4rem, 10vw, 5rem);
+}
+.auction__author--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.auction__info--tag {
+    background-color: #5142fb;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    word-spacing: 1rem;
+    letter-spacing: 2px;
+}
+.auction__card--bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.auction__like {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    padding: 1px 11px;
+    border-radius: 8px;
+    background-color: #14141f;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.auction__like span {
+    display: flex;
+}
+.auction__like span::before {
+    font-size: 1.5em;
+    color: #fff;
+    content: '♥';
+    margin-right: 0.5rem;
+}
+.auction__price {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.auction__price span {
+    color: #e2e2e2;
+    font-size: 1.3rem;
+}
+.auction__price--details {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+.auction__price--details h5 {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+.auction__price--details span {
+    color: #e2e2e2;
+    font-size: 1.3rem;
+}
+.auction__card--media {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.auction__media--counter {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 26%;
+    background-color: #343444;
+    padding: 0.7rem 1.5rem;
+    border-radius: 1.4rem;
+}
+.auction__media--counter i {
+    color: var(--blue);
+}
+.card__time--text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.auction__media--BtnBid {
+    position: absolute;
+    top: -60%;
+    left: 50%;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 3rem;
+    cursor: pointer;
+    opacity: 0;
+    box-shadow: none;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+}
+.auction--item:hover .auction__media--BtnBid {
+    top: 50%;
+    opacity: 1;
+}
+.auction--item:hover .auction__card--media img {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    object-fit: cover;
+    border-radius: 1.5rem;
+    opacity: 0.5;
+}
+.auction--item:hover {
+    transform: translateY(-2%);
+    box-shadow: 7px 9px 6px 0px rgb(66 38 92 / 21%);
+}
+.auction__media--BtnBid a {
+    background-color: #fffc;
+    font-family: inherit;
+    padding: 1.5rem 2.5rem;
+    outline: none;
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    transition: background-position 275ms ease;
+    box-shadow: 5px 5px 4px rgb(0 0 0 / 28%);
+}
+.auction__media--BtnBid i {
+    margin-right: 1rem;
+}
+.auction__pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.pagination__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+.pagination__page--active {
+    box-shadow: 0 0 0 0.3rem var(--bg-dark), 0 0 0 0.4rem var(--primary-font);
+}
+.auction__pagination a {
+    color: var(--primary-font);
+}
+.pagination__page {
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: var(--primary-font);
+    border-radius: 50%;
+    cursor: pointer;
+}
+@media (min-width: 500px) {
+    .auction__bottom {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .auction__media--counter {
+        left: 33%;
+    }
+}
+
+@media (min-width: 688px) {
+    .auction__bottom {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .auction__media--counter {
+        left: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    .auction__bottom {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: 1;
+        transition: all 0.5s ease-in-out;
+    }
+    .auction__media--counter {
+        left: 17%;
+    }
+    .auction__card--title a {
+        font-size: 1.4rem;
+    }
+    .auction__author--info h6 a {
+        font-size: 1.4rem;
+    }
+    .auction__info--tag {
+        font-size: 1rem;
+    }
+    .auction__card--info {
+        align-items: flex-start;
+    }
+}
+@media (min-width: 1312px) {
+    .auction__bottom {
+        width: 100%;
+        gap: 3rem;
+    }
+    .auction__card--info {
+        align-items: center;
+    }
+    .auction__media--counter {
+        left: 25%;
+    }
+    .auction__card--title a {
+        font-size: 1.8rem;
+    }
+}
