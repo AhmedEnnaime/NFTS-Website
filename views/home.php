@@ -187,10 +187,7 @@ $collections = $data->getAllCollections();
                                 <span>NFTs</span>
                                 
                             </h2>
-                            <p>
-                                Marketplace for monster character cllections non
-                                fungible token NFTs
-                            </p>
+                           
                             
                         </div>
                         <div class="hero__wrapper--right">
@@ -288,17 +285,21 @@ $collections = $data->getAllCollections();
                                     <div class="auction__card--media">
                                         <a href="#">
                                             <img
-                                                src="image/03_Live Auctions/card-item8.jpg"
+                                                src="'.$collection['img'].'"
                                                 alt=""
                                             />
                                         </a>
                                         <div class="auction__media--BtnBid">
-                                            <a href="#">
-                                                <i
-                                                    class="fa-solid fa-eye"
-                                                ></i
-                                                >View NFTS</a
-                                            >
+                                            <form action="" method="POST">
+                                                <input type="hidden" value="'.$collection['id'].'">
+                                                <a href="#">
+                                                    <i
+                                                        class="fa-solid fa-eye"
+                                                    ></i
+                                                    >View NFTS</a
+                                                >
+                                            </form>
+                                            
                                         </div>
                                         
                                     </div>
@@ -319,14 +320,14 @@ $collections = $data->getAllCollections();
                                                 </h6>
                                             </div>
                                         </div>
-                                        <form action="">
+                                        <form action="./delete.php" method="POST">
                                             <input type="hidden" value="'.$collection['id'].'">
                                             <div class="auction__info--tag">
                                                 <a href="">delete</a>
                                             </div>
                                             
                                         </form>
-                                        <form action="">
+                                        <form action="./update.php" method="POST">
                                             <input type="hidden" value="'.$collection['id'].'">
                                             <div class="auction__info--tag">
                                                 <a href="">update</a>

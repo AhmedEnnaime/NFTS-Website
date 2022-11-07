@@ -6,6 +6,17 @@ class CollectionsController{
         return $collections;
     }
 
+    public function getOneCollection(){
+        if(isset($_POST['id'])){
+            $data = array(
+                'id' => $_POST['id']
+            );
+            $collection = Collection::getCollection($data);
+            return $collection;
+        }
+        
+    }
+
     public function addCollection(){
         if(isset($_POST['add'])){
             $data = array(

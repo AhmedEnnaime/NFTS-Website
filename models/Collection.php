@@ -9,6 +9,20 @@ class Collection{
         $stmt = null;
     }
 
+    static public function getCollection($data){
+        $id = $data['id'];
+        try{
+            $query = 'SELECT * FROM collection WHERE id=:id';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute(array(":id" => $id));
+            $collection = $stmt->fetch(PDO::FETCH_OBJ);
+            return $collection;
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+
+    }
+
     static public function add($data){
         $stmt = DB::connect()->prepare('INSERT INTO collection (name,artiste,img) values(:name,:artiste,:img)');
         $stmt->bindParam(':name',$data['name']);
