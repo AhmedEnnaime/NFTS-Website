@@ -36,7 +36,7 @@ class Collection{
         $stmt = null;
     }
 
-    static public function updateClc($data){
+    static public function update($data){
         $stmt = DB::connect()->prepare('UPDATE collection SET name = :name,artiste = :artiste,img = :img WHERE id = :id');
         $stmt->bindParam(':id',$data['id']);
         $stmt->bindParam(':name',$data['name']);
@@ -49,6 +49,22 @@ class Collection{
         }
         $stmt = null;
     }
+
+    static public function delete($data){
+        $id = $data['id'];
+        try{
+            $query = 'DELETE FROM collection WHERE id=:id';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute(array(":id" => $id));
+            if($stmt->execute()){
+                return 'ok';
+            }
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
+
 }
 
 ?>

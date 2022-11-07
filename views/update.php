@@ -4,6 +4,8 @@ require_once "../controllers/CollectionController.php";
 if(isset($_POST['id'])){
     $oldCollection = new CollectionsController();
     $collection = $oldCollection->getOneCollection();
+}else{
+    header('Location: ./home.php');
 }
 if(isset($_POST['update'])){
     $oldCollection = new CollectionsController();

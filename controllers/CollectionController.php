@@ -41,7 +41,19 @@ class CollectionsController{
                 'artiste'=>$_POST['artiste'],
                 'img'=>$_POST['img'],
             );
-            $result = Collection::updateClc($data);
+            $result = Collection::update($data);
+            if($result == 'ok'){
+                header('Location: ../views/home.php');
+            }else{
+                echo $result;
+            }
+        }
+    }
+
+    public function deleteCollection(){
+        if(isset($_POST['id'])){
+            $data['id']= $_POST['id'];
+            $result = Collection::delete($data);
             if($result == 'ok'){
                 header('Location: ../views/home.php');
             }else{

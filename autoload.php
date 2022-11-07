@@ -4,7 +4,7 @@ spl_autoload_register('autoload');
 function autoload($class_name){
     $array_paths = array(
         'database/',
-        'app/classes',
+        'app/classes/',
         'models/',
         'controllers/'
     );
