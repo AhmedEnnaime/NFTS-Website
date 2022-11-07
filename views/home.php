@@ -39,9 +39,9 @@ $collections = $data->getAllCollections();
                         <div class="navbar__logo">
                             <a href="#">
                                 <img
-                                    src="./images/logo.png"
+                                    src="./images/logo1.png"
                                     alt="Axies"
-                                    width="130px"
+                                    width="100px"
                                     height="80px"
                                 />
                             </a>
@@ -81,36 +81,9 @@ $collections = $data->getAllCollections();
                                     class="navbar__menulist navbar__menu--haschildren"
                                 >
                                     <a href="#" class="navbar__menulink"
-                                        >Contact<i
-                                            class="fa-solid fa-angle-down"
-                                        ></i
-                                    ></a>
-                                    <div
-                                        class="navbar__submenu navbar__submenu--single"
-                                    >
-                                        <ul class="navbar__submenu--lists">
-                                            <li class="navbar__submenu--list">
-                                                <a
-                                                    href="#"
-                                                    class="navbar__submenu--link"
-                                                    ><i
-                                                        class="fa-solid fa-address-book"
-                                                    ></i
-                                                    >Contact 1</a
-                                                >
-                                            </li>
-                                            <li class="navbar__submenu--list">
-                                                <a
-                                                    href="#"
-                                                    class="navbar__submenu--link"
-                                                    ><i
-                                                        class="fa-solid fa-address-book"
-                                                    ></i
-                                                    >Contact 2</a
-                                                >
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        >Contact
+                                            </a>
+                                    
                                 </li>
                             </ul>
                         </nav>
@@ -142,40 +115,7 @@ $collections = $data->getAllCollections();
         <!-- header end -->
         <!-- main start -->
         <main id="main">
-            <section class="sticky__bar">
-                <ul class="socials__links">
-                    <li class="socials__item">
-                        <a href="#" class="socials__link">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="socials__item">
-                        <a href="#" class="socials__link">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="socials__item">
-                        <a href="#" class="socials__link">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </li>
-                    <li class="socials__item">
-                        <a href="#" class="socials__link">
-                            <i class="fa-brands fa-telegram"></i>
-                        </a>
-                    </li>
-                    <li class="socials__item">
-                        <a href="#" class="socials__link">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="socials__item">
-                        <a href="#" class="socials__link">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                </ul>
-            </section>
+            
             <section id="hero">
                 <div class="container">
                     <div class="hero__wrapper">
@@ -321,16 +261,16 @@ $collections = $data->getAllCollections();
                                             </div>
                                         </div>
                                         <form action="./delete.php" method="POST">
-                                            <input type="hidden" value="'.$collection['id'].'">
+                                            <input name="id" type="hidden" value="'.$collection['id'].'">
                                             <div class="auction__info--tag">
-                                                <a href="">delete</a>
+                                                <button type="submit">delete</button>
                                             </div>
                                             
                                         </form>
                                         <form action="./update.php" method="POST">
-                                            <input type="hidden" value="'.$collection['id'].'">
+                                            <input name="id" type="hidden" value="'.$collection['id'].'">
                                             <div class="auction__info--tag">
-                                                <a href="">update</a>
+                                                <button type="submit">update</button>
                                             </div>
                                             
                                         </form>
@@ -412,17 +352,12 @@ $collections = $data->getAllCollections();
                                 class="fa-brands fa-facebook footer--social-item"
                             ></i>
                             <i
-                                class="fa-solid fa-paper-plane footer--social-item"
+                                class="fa-brands fa-instagram footer--social-item"
                             ></i>
                             <i
                                 class="fa-brands fa-youtube footer--social-item"
                             ></i>
-                            <i
-                                class="fa-brands fa-tiktok footer--social-item"
-                            ></i>
-                            <i
-                                class="fa-brands fa-discord footer--social-item"
-                            ></i>
+                            
                         </div>
                     </div>
                 </div>

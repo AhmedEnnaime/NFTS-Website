@@ -5,6 +5,10 @@ if(isset($_POST['id'])){
     $oldCollection = new CollectionsController();
     $collection = $oldCollection->getOneCollection();
 }
+if(isset($_POST['update'])){
+    $oldCollection = new CollectionsController();
+    $oldCollection->updateCollection();
+}
 ?>
 
 <html lang="en">
@@ -15,15 +19,17 @@ if(isset($_POST['id'])){
     <title>Document</title>
 </head>
 <body>
+
     <h1>Update</h1>
     <form action="" method="POST">
-    collection name : <input type="text" name="name">
+    <input name="id" type="hidden" value="<?php echo $collection->id; ?>">
+    collection name : <input type="text" name="name" value="<?php echo $collection->name; ?>">
     <br>
-    collection artiste : <input type="text" name="artiste">
+    collection artiste : <input type="text" name="artiste" value="<?php echo $collection->artiste; ?>">
     <br>
-    collection image : <input type="file" name="img">
+    collection image : <input type="file" name="img" value="<?php echo $collection->img; ?>">
     <br>
-    <button type="submit" name="add">add</button>
+    <button type="submit" name="update">update</button>
 </form>
 </body>
 </html>

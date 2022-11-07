@@ -32,6 +32,23 @@ class CollectionsController{
             }
         }
     }
+
+    public function updateCollection(){
+        if(isset($_POST['update'])){
+            $data = array(
+                'id'=> $_POST['id'],
+                'name'=>$_POST['name'],
+                'artiste'=>$_POST['artiste'],
+                'img'=>$_POST['img'],
+            );
+            $result = Collection::updateClc($data);
+            if($result == 'ok'){
+                header('Location: ../views/home.php');
+            }else{
+                echo $result;
+            }
+        }
+    }
 }
 
 ?>

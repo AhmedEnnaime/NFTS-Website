@@ -360,6 +360,9 @@
     .auction__info--tag {
         font-size: 1rem;
     }
+    .auction__info--tag button{
+        color: #4b50e6;
+    }
     .auction__card--info {
         align-items: flex-start;
     }

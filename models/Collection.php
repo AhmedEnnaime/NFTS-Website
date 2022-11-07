@@ -35,6 +35,20 @@ class Collection{
         }
         $stmt = null;
     }
+
+    static public function updateClc($data){
+        $stmt = DB::connect()->prepare('UPDATE collection SET name = :name,artiste = :artiste,img = :img WHERE id = :id');
+        $stmt->bindParam(':id',$data['id']);
+        $stmt->bindParam(':name',$data['name']);
+        $stmt->bindParam(':artiste',$data['artiste']);
+        $stmt->bindParam(':img',$data['img']);
+        if($stmt->execute()){
+            return 'ok';
+        }else{
+            return 'error';
+        }
+        $stmt = null;
+    }
 }
 
 ?>
