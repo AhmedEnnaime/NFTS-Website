@@ -1,3 +1,12 @@
+<?php
+
+require_once "../controllers/CollectionController.php";
+if(isset($_POST['add'])){
+    $newCollection = new CollectionsController();
+    $newCollection->addCollection();
+}
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
