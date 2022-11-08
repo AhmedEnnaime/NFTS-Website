@@ -1,5 +1,8 @@
 <?php
+
 require_once "../models/Collection.php";
+require_once "../app/classes/Session.php";
+
 class CollectionsController{
     public function getAllCollections(){
         $collections = Collection::getAll();
@@ -26,6 +29,7 @@ class CollectionsController{
             );
             $result = Collection::add($data);
             if($result == 'ok'){
+                Session::set('success','Collection added');
                 header('Location: ../views/home.php');
             }else{
                 echo $result;
@@ -43,6 +47,7 @@ class CollectionsController{
             );
             $result = Collection::update($data);
             if($result == 'ok'){
+                Session::set('success','Collection updated');
                 header('Location: ../views/home.php');
             }else{
                 echo $result;
@@ -55,6 +60,7 @@ class CollectionsController{
             $data['id']= $_POST['id'];
             $result = Collection::delete($data);
             if($result == 'ok'){
+                Session::set('success','Collection deleted');
                 header('Location: ../views/home.php');
             }else{
                 echo $result;

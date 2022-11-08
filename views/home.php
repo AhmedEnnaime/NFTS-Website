@@ -1,9 +1,10 @@
 
 <?php
+
 require_once "../controllers/CollectionController.php";
 $data = new CollectionsController();
 $collections = $data->getAllCollections();
-//print_r($collections);
+
 ?>
 <html lang="en">
     <head>
