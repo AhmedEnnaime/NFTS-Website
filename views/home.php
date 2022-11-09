@@ -25,10 +25,8 @@ $collections = $data->getAllCollections();
         <!-- css links -->
         <link rel="stylesheet" href="./css/layout.css" />
         <link rel="stylesheet" href="./css/nav.css" />
-        <link rel="stylesheet" href="./css/hero.css" />
-        <link rel="stylesheet" href="./css/auction.css" />
-        <link rel="stylesheet" href="./css/seller.css" />
-        <link rel="stylesheet" href="./css/pick.css" />
+        <link rel="stylesheet" href="./css/Heros.css">
+        <link rel="stylesheet" href="./css/auctions.css">
         <link rel="stylesheet" href="./css/footer.css" />
     </head>
     <body>
@@ -134,13 +132,9 @@ $collections = $data->getAllCollections();
                         <div class="hero__wrapper--right">
                             <div class="hero__shapes">
                                 <div class="hero__shape--circle"></div>
-                                <div class="hero__shape--star">
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                
                                 <div class="hero__shape--circle1"></div>
-                                <div class="hero__shape--star hero-star1">
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                                
                                 <div
                                     class="hero__shape--circle hero-circle1"
                                 ></div>
@@ -150,18 +144,7 @@ $collections = $data->getAllCollections();
                                 <div
                                     class="hero__shape--circle1 hero-circle2"
                                 ></div>
-                                <div class="hero__shape--star hero-star2">
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <div class="hero__shape--star hero-star3">
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <div class="hero__shape--star hero-star4">
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <div class="hero__shape--star hero-star5">
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
+                            
                             </div>
                             <img
                                 src="./images/imgslider2.png"
@@ -194,7 +177,7 @@ $collections = $data->getAllCollections();
                             </p>
                         </div>
                         <div class="heroBox--item">
-                            <a href="./add.php" style="text-align: center;">
+                            <a href="./addNft.php" style="text-align: center;">
                                 <i class="fa-solid fa-image" style="margin-bottom:20px ;"></i>
                                 <h3>Add Your NFTs</h3>
                             </a>
@@ -264,14 +247,14 @@ $collections = $data->getAllCollections();
                                         <form action="./delete.php" method="POST">
                                             <input name="id" type="hidden" value="'.$collection['id'].'">
                                             <div class="auction__info--tag">
-                                                <button type="submit">delete</button>
+                                                <input value="delete" type="submit">
                                             </div>
                                             
                                         </form>
                                         <form action="./update.php" method="POST">
                                             <input name="id" type="hidden" value="'.$collection['id'].'">
                                             <div class="auction__info--tag">
-                                                <button type="submit">update</button>
+                                                <input value="update" type="submit">
                                             </div>
                                             
                                         </form>

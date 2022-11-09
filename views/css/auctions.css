@@ -22,15 +22,8 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 600;
-    background: linear-gradient(
-        to right,
-        #e250e5,
-        #4b50e6 50%,
-        var(--primary-font) 50%
-    );
+    color: #fff;
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
     transition: background-position 275ms ease;
@@ -63,10 +56,6 @@
     color: rgba(255, 255, 255, 0.85);
     padding: 1.6rem;
     border-radius: 1.5rem;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
     transition: all 1s ease;
     cursor: pointer;
 }
@@ -79,23 +68,11 @@
     border-radius: 1.5rem;
     width: 100%;
     height: auto;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
     transition: all 1s ease;
 }
 .auction__card--title a {
-    color: var(--primary-font) !important;
+    color: var(--primary-font);
     font-size: 1.8rem;
-    background: linear-gradient(
-        to right,
-        #e250e5,
-        #4b50e6 50%,
-        var(--primary-font) 50%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
     transition: background-position 275ms ease;
@@ -125,46 +102,6 @@
     gap: 1rem;
     margin-bottom: 1rem;
 }
-.auction__author--info a,
-.auction__price--details a,
-.pick__history a {
-    background: linear-gradient(
-        to right,
-        #e250e5,
-        #4b50e6 50%,
-        var(--primary-font) 50%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    background-position: 100%;
-    transition: background-position 275ms ease;
-    font-weight: bolder;
-}
-.auction__author--info a:hover,
-.auction__price--details a:hover,
-.pick__history a:hover {
-    background-position: 0 100%;
-}
-.pick__history a:hover i {
-    transition: all 0.7s ease-in-out;
-    animation: history 1s ease;
-    background: linear-gradient(to right, #e250e5, #4b50e6 200%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-@keyframes history {
-    0% {
-        transform: rotateZ(0deg);
-    }
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
-.auction__author--avatar img {
-    border-radius: 1.5rem;
-    height: clamp(4rem, 10vw, 5rem);
-}
 .auction__author--info {
     display: flex;
     flex-direction: column;
@@ -179,34 +116,19 @@
     word-spacing: 1rem;
     letter-spacing: 2px;
 }
+.auction__info--tag input{
+    background-color: #5142fb;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
 .auction__card--bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.auction__like {
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 24px;
-    color: #fff;
-    padding: 1px 11px;
-    border-radius: 8px;
-    background-color: #14141f;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.auction__like span {
-    display: flex;
-}
-.auction__like span::before {
-    font-size: 1.5em;
-    color: #fff;
-    content: '♥';
-    margin-right: 0.5rem;
-}
+
 .auction__price {
     display: flex;
     flex-direction: column;
@@ -235,20 +157,7 @@
     width: 100%;
     overflow: hidden;
 }
-.auction__media--counter {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    position: absolute;
-    bottom: 1rem;
-    left: 26%;
-    background-color: #343444;
-    padding: 0.7rem 1.5rem;
-    border-radius: 1.4rem;
-}
-.auction__media--counter i {
-    color: var(--blue);
-}
+
 .card__time--text {
     font-size: 1.5rem;
     font-weight: bold;
@@ -276,7 +185,6 @@
     opacity: 1;
 }
 .auction--item:hover .auction__card--media img {
-    -webkit-transform: scale(1.05);
     transform: scale(1.05);
     object-fit: cover;
     border-radius: 1.5rem;
