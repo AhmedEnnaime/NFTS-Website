@@ -1,4 +1,6 @@
 <?php
+require_once "../models/User.php";
+
 class UserController{
 
     public function signup(){
@@ -12,7 +14,7 @@ class UserController{
                 'email'=>$_POST['email'],
                 'password'=>$password,
                 'birthday'=>$_POST['birthday'],
-                //'role'=>1,
+                'role'=>1,
             );
             $result = User::add($data);
             if($result == 'ok'){     

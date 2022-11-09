@@ -1,0 +1,163 @@
+#header {
+    display: block;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid rgba(235, 235, 235, 0.2);
+    transition: all 0.5s ease;
+}
+.navbar .navbar__item--right {
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.navbar__menu > ul > li {
+    font-weight: 600;
+    margin-left: 3rem;
+    display: inline-block;
+    color: var(--primary-font);
+}
+.navbar__menu > ul > li > a {
+    position: relative;
+    color: snow;
+    font-size: 1.8rem;
+    transition: color 0.5s ease;
+}
+.navbar__menu > ul > li:hover > a {
+    background: linear-gradient(178.56deg, #e250e5 5.32%, #4b50e6 94.32%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar--right__state a {
+    background: #343444;
+    border-radius: 10px;
+    width: 4rem;
+    height: 4rem;
+    min-width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar--right__state a:last-child {
+    color: var(--primary-font);
+    background: #4b50e6;
+}
+
+
+
+.navbar__menu
+    > ul
+    > li
+    .navbar__submenu
+    > .megamenu__list--item
+    > ul
+    > li:hover {
+    background: linear-gradient(172deg, #e250e5 5.32%, #4b50e6 94.32%);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+.navbar__submenu--single {
+    min-width: 270px;
+    max-width: 350px;
+    border-radius: 1rem;
+}
+.navbar__menu > ul > li .navbar__submenu > ul > li > a {
+    display: inline-block;
+    margin: 1rem 0rem;
+    color: #ebebeba3;
+}
+.navbar__submenu--link i {
+    margin-right: 1rem;
+}
+.navbar__submenu--list {
+    padding: 1rem 2rem;
+}
+.navbar__submenu--list:hover {
+    background: linear-gradient(172deg, #e250e5 5.32%, #4b50e6 94.32%);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+@media (max-width: 440px) {
+    .navbar {
+        justify-content: space-between;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .navbar .navbar__item--right {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+
+}
+@media (max-width: 1090px) {
+    .navbar__item--center {
+        display: none;
+    }
+}
+@media (max-width: 1224px) {
+    .navbar__menu > ul > li:nth-child(1) .navbar__submenu.navbar__megamenu {
+        /* left: 18rem; */
+        left: inherit;
+    }
+    .navbar__menu > ul > li .navbar__submenu.navbar__column--mega2 {
+        max-width: 600px;
+    }
+    .navbar__menu > ul > li:nth-child(2) .navbar__submenu.navbar__megamenu {
+        /* left: 38rem; */
+        left: inherit;
+    }
+}
+@media (max-width: 1348px) {
+    .navbar__menu > ul > li > a {
+        font-size: 1.5rem;
+    }
+    
+    .navbar__menu
+        > ul
+        > li
+        .navbar__submenu
+        > .megamenu__list--item
+        > ul
+        > li
+        > a {
+        font-size: 1.4rem;
+    }
+    .navbar__menu > ul > li .navbar__submenu > .megamenu__list--item > h4 {
+        font-size: 1.6rem;
+    }
+    .navbar__submenu--single {
+        min-width: 230px;
+        max-width: 330px;
+    }
+    .sticky--header .navbar__menu > ul > li {
+        margin-left: 1.9rem;
+    }
+    .sticky--header .navbar__menu > ul > li > a {
+        font-size: 1.5rem;
+    }
+    .sticky--header .container {
+        padding: 0.5%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1380px) and (min-width: 1349px) {
+    .navbar__menu > ul > li > a {
+        font-size: 1.4rem;
+    }
+}
+

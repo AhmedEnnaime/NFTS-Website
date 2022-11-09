@@ -26,7 +26,7 @@
                     <img src="./images/background.jpg" alt="" />
                 </div>
                 <div class="login__item login__item--right">
-                    <div class="login--title">Sign In</div>
+                    <div class="login--title">Login</div>
                     <div class="login--form">
                         <label for="txt_email">Email</label>
                         <input

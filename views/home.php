@@ -24,7 +24,7 @@ $collections = $data->getAllCollections();
         />
         <!-- css links -->
         <link rel="stylesheet" href="./css/layout.css" />
-        <link rel="stylesheet" href="./css/nav.css" />
+       <link rel="stylesheet" href="./css/navs.css">
         <link rel="stylesheet" href="./css/Heros.css">
         <link rel="stylesheet" href="./css/auctions.css">
         <link rel="stylesheet" href="./css/footer.css" />
