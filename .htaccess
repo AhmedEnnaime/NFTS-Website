@@ -1,7 +1,0 @@
-# Options All -Indexes
-
-# RewriteEngine On
-
-# RewriteBase /YouCode/NFT
-
-# RewriteRule ^([-a-zA-Z0-9]+)$ index.php?page=$1
