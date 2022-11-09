@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../controllers/CollectionController.php";
 require_once "../controllers/NftController.php";
 $data = new CollectionsController();

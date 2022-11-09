@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 require_once "../controllers/CollectionController.php";
 $data = new CollectionsController();
 $collections = $data->getAllCollections();
