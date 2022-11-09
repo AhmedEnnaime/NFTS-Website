@@ -1,3 +1,14 @@
+<?php
+
+require_once "../controllers/UserController.php";
+if(isset($_POST['login'])){
+    $loginUser = new UserController();
+    $loginUser->auth();
+}
+
+?>
+
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -27,23 +38,26 @@
                 </div>
                 <div class="login__item login__item--right">
                     <div class="login--title">Login</div>
-                    <div class="login--form">
-                        <label for="txt_email">Email</label>
-                        <input
-                            type="email"
-                            name="email"
-                            id="txt_email"
-                            placeholder="Email Address"
-                        />
-                        <label for="txt_pass">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            id="txt_pass"
-                            placeholder="Password"
-                        />
-                        <input type="submit" value="Sign in" class="btn_sign" />
-                    </div>
+                    <form action="" method="POST">
+                        <div class="login--form">
+                            <label for="txt_email">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                id="txt_email"
+                                placeholder="Email Address"
+                            />
+                            <label for="txt_pass">Password</label>
+                            <input
+                                type="password"
+                                name="password"
+                                id="txt_pass"
+                                placeholder="Password"
+                            />
+                            <input type="submit" name="login" value="Login" class="btn_sign" />
+                        </div>
+                    </form>
+                    
                     <div class="login--createAccount">
                         <div class="login--createAccount--items">
                             <p>

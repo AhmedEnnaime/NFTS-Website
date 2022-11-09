@@ -105,7 +105,7 @@ $collections = $data->getAllCollections();
                             <a href="login.html"
                                 ><i class="fa-solid fa-user"></i
                             ></a>
-                           
+                        
                         </div>
                     </div>
                 </div>
