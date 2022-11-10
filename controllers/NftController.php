@@ -67,6 +67,14 @@ class NftController{
             }
         }
     }
+
+    public function getNfts(){
+        if(isset($_POST['id'])){
+            $collection_id['id']= $_POST['id'];
+            $result = Nft::getSpecialNfts($collection_id);
+            return $result;
+        }
+    }
 }
 
 ?>

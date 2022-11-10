@@ -7,4 +7,3 @@
     echo $_SESSION['logged'];
                              
  ?>
-                            

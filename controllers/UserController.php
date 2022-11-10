@@ -11,8 +11,8 @@ class UserController{
                 session_start();
                 $_SESSION['logged'] == true;
                 $_SESSION['email'] == $result->email;
-                $_SESSION['id'] == $result->id;
-                $_SESSION['role'] == $result->role;
+                //$_SESSION['id'] == $result->id;
+                //$_SESSION['role'] == $result->role;
                 header('Location: ../views/test.php');
             }else{
                 echo 'email or password incorrect';

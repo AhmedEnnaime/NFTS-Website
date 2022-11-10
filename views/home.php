@@ -214,9 +214,10 @@ $collections = $data->getAllCollections();
                                             />
                                         </a>
                                         <div class="auction__media--BtnBid">
-                                            <form action="" method="POST">
-                                                <input type="hidden" value="'.$collection['id'].'">
+                                            <form action="./specialNfts.php" method="POST">
+                                                <input name="id" type="hidden" value="'.$collection['id'].'">
                                                 <a href="#">
+                                                    <input type="submit" name="id" value="'.$collection['id'].'">
                                                     <i
                                                         class="fa-solid fa-eye"
                                                     ></i

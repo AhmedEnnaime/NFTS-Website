@@ -60,7 +60,7 @@ class CollectionsController{
             $data['id']= $_POST['id'];
             $result = Collection::delete($data);
             if($result == 'ok'){
-                Session::set('success','Collection deleted');
+                //Session::set('success','Collection deleted');
                 header('Location: ../views/home.php');
             }else{
                 echo $result;

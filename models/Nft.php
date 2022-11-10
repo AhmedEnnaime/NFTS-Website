@@ -68,5 +68,13 @@ class Nft{
         }     
     }
 
+    static public function getSpecialNfts($collection_id){
+        $collection_id = $_POST['id'];
+        $stmt = DB::connect()->prepare('SELECT * FROM nft where collection_id = '.$collection_id.'');
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt = null;
+    }
+
 }
 ?>
