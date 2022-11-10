@@ -76,5 +76,39 @@ class Nft{
         $stmt = null;
     }
 
+    static public function getExpensive(){
+        try{
+            $query = 'SELECT * FROM nft WHERE price in (SELECT MAX(price) FROM nft);';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
+    static public function getCheap(){
+        try{
+            $query = 'SELECT * FROM nft WHERE price in (SELECT MIN(price) FROM nft);';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
+    static public function getNftNum(){
+        try{
+            $query = 'SELECT COUNT(*) FROM nft;';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            $nft = $stmt->fetch(PDO::FETCH_OBJ);
+            return $nft;
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
 }
 ?>

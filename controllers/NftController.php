@@ -75,6 +75,21 @@ class NftController{
             return $result;
         }
     }
+
+    public function getMostExpensive(){
+        $expensive = Nft::getExpensive();
+        return $expensive;
+    }
+
+    public function getMostCheapest(){
+        $cheap = Nft::getCheap();
+        return $cheap;
+    }
+
+    public function getCountNft(){
+        $nftCount = Nft::getNftNum();
+        return $nftCount;
+    }
 }
 
 ?>
