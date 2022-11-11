@@ -12,29 +12,29 @@ $celebritys = $collections->mostCelebrity();
 
 foreach($expensive as $exp){
     echo '
-    '.$exp['name'].'
-    '.$exp['price'].'
+    expensive name'.$exp['name'].'
+    expensive price'.$exp['price'].'
 
 
 ';
 }
 foreach($cheap as $chp){
     echo '
-        '.$chp['name'].'
-        '.$chp['price'].'
+        cheap name '.$chp['name'].'
+        cheap price' .$chp['price'].'
     ';
 }
 
 foreach($counts as $count){
     echo '
-        '.$count.'
+        number of nfts is '.$count.'
     ';
 }
 
 foreach($celebritys as $celebrity){
     echo '
-        '.$celebrity['name'].'
-        '.$celebrity['artiste'].'
+        most celebrity collection name '.$celebrity['name'].'
+        most celebrity collection artiste '.$celebrity['artiste'].'
     ';
 }
 

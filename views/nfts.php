@@ -5,6 +5,7 @@ $data = new NftController();
 $nfts = $data->getAllNfts();
 $ascSort = $data->ascSort();
 $descSort = $data->descSort();
+$latestSort = $data->latestSort();
 ?>
 
 <html lang="en">
@@ -104,6 +105,12 @@ $descSort = $data->descSort();
         '.$desc['price'].'</br>
     
     
+    ';
+    }
+
+    foreach($latestSort as $latest){
+        echo '
+        '.$latest['name'].'</br>
     ';
     }
    

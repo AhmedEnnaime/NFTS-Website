@@ -100,6 +100,11 @@ class NftController{
         $descSort = Nft::descendingSort();
         return $descSort;
     }
+
+    public function latestSort(){
+        $latestSort = Nft::latestListed();
+        return $latestSort;
+    }
 }
 
 ?>

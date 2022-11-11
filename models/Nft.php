@@ -132,5 +132,16 @@ class Nft{
         }
     }
 
+    static public function latestListed(){
+        try{
+            $query = 'SELECT * FROM `nft` ORDER BY (date) DESC;';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
 }
 ?>
