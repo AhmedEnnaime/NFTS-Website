@@ -66,7 +66,7 @@ class Collection{
 
     static public function celebrityCollection(){
         try{
-            $query = 'SELECT collection.id,collection.name,collection.artiste,collection.img,COUNT(nft.collection_id) as TotalRepeat FROM collection INNER JOIN nft WHERE collection.id = nft.collection_id GROUP By nft.collection_id ORDER BY TotalRepeat DESC LIMIT 1;';
+            $query = 'SELECT collection.id,collection.name,collection.artiste,collection.img,COUNT(nft.collection_id) as TotalRepeat FROM collection INNER JOIN nft WHERE collection.id = nft.collection_id GROUP By nft.collection_id ORDER BY TotalRepeat DESC;';
             $stmt = DB::connect()->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll();
