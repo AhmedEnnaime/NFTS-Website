@@ -75,50 +75,8 @@
 .editProfile__right h3, .editProfile__account label{
     color: var(--primary-font);
 }
-.editProfile__right--top{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-.editProfile__right--coverImage{
-    height: 200px; 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem , 1fr));
-    gap: 2rem;
-}
- .editProfile__right--coverImage img{
-    cursor: pointer;
-    height: inherit;
-    width: 100%;
-    border-radius: 0.7rem;
-    padding: 0.4rem;
-    transition: border 1s ease;
-    -webkit-transition: border 0.5s ease;
-    -moz-transition: border 0.5s ease;
-    -ms-transition: border 0.5s ease;
-    -o-transition: border 0.5s ease;
-} 
-.editProfile__right--coverImage form{
-    border: 0.2rem dashed #383847;
-    border-radius: 0.5rem;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column-reverse;
-    gap: 2rem;
 
-}
-.editProfile__right--coverImage form input[type=file]{ 
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    cursor: pointer;
-}
-.editProfile__right--coverImage form a{
-    pointer-events: none;
-}
+
 .editProfile__left--avatar form{
     display: flex;
     flex-direction: column;
@@ -144,7 +102,7 @@
     grid-template-columns: repeat(2,1fr);
     gap: 3rem;
 }
-.editProfile__right--accountInfo,.editProfile__right--accountMedia{
+.editProfile__right--accountInfo{
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -168,52 +126,14 @@
     color: var(--login-color);
     outline: none;
     transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
 }
 .editProfile__right--accountMedia .editProfile__account a{
-    align-items: baseline !important;
+    align-items: baseline;
 }
 .editProfile__right--updateBtn{
     display: flex;
 }
-.editProfile__right--coverImage form.active{
-    border: 2px solid #fff;
-}
-.editProfile__right--coverImage h4{
-    color: var(--primary-font);
-    font-weight: 500;
-    font-size: 1.4rem;
-}
-.swal-modal {
-    background-color: #14141ff0 !important;
-}      
-.swal-footer {
-    text-align: center !important;
-}
-.swal-overlay--show-modal .swal-modal{
-    background-color: #14141ff0;
-    box-shadow: 0px 0px 6px 0px #be9fe27d;
-}
-.swal-text{
-    color: var(--login-color);
-}
-.swal-title {
-    color: rgb(255 255 255 / 78%) !important;
-}
-.swal-icon--warning {
-    border-color: #be2828 !important;
-}
-.swal-icon--warning__body, .swal-icon--warning__dot {
-    background-color: #be2828;
-}
-.swal-icon--success__hide-corners{
-    background-color: transparent;
-}
-.swal-icon--success:after, .swal-icon--success:before{
-    background-color: transparent;
-}
+
 .editProfile__account input:focus, .editProfile__account textarea:focus {
     border-bottom: 0.1rem solid #5142fca6;
     box-shadow: 0.17rem 0.12rem 0.2rem 0.1rem #2d276a;
@@ -221,33 +141,20 @@
 .navbar--right__state a:first-child {
     position: relative;
 }
-.editProfile__right--coverImage img:hover {
-    border: 0.2rem dashed rgb(130 80 230 / 79%);
-}
+
 /* Container Media Query */
 @media only screen and (min-width: 50px) {
     #editProfile .container {
         display: grid;
         grid-template-columns: inherit;
     }
-    .editProfile__right--coverImage{
-        grid-template-columns: repeat(1, minmax(10rem , 1fr));
-        height: min-content;
-    }
-    .editProfile__right--coverImage form{
-        padding: 2rem;
-    }
+    
     .editProfile__right--account {
         display: grid;
         grid-template-columns: repeat(1,1fr);
     }
-    .item--breadcrumbs{
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-    }
     #Item {
-        padding: 20rem 0 7rem 0 !important;
+        padding: 20rem 0 7rem 0;
     }
 }
 @media only screen and (min-width: 250px) {
@@ -255,13 +162,7 @@
         display: grid;
         grid-template-columns: inherit;
     }
-    .editProfile__right--coverImage{
-        grid-template-columns: repeat(1, minmax(10rem , 1fr));
-        height: min-content;
-    }
-    .editProfile__right--coverImage form{
-        padding: 2rem;
-    }
+    
     .editProfile__right--account {
         display: grid;
         grid-template-columns: repeat(1,1fr);
@@ -280,13 +181,9 @@
     .editProfile__right {
         grid-column: 3/-1;
     }
-    .item--breadcrumbs{
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-    }
+   
     #Item {
-        padding: 15rem 0 7rem 0 !important;
+        padding: 15rem 0 7rem 0;
     }
 }
 
@@ -297,15 +194,10 @@
     .editProfile__right {
         grid-column: 2/-1;
     }
-    .editProfile__right--coverImage {
-        grid-template-columns: repeat(3, minmax(10rem , 1fr));
-        height: 200px;
-    }
+  
     .editProfile__right--account {
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
-    .editProfile__right--coverImage form{
-        padding: 0;
-    }
+   
 }

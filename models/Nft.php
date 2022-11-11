@@ -110,5 +110,27 @@ class Nft{
         }
     }
 
+    static public function ascendingSort(){
+        try{
+            $query = 'SELECT * FROM `nft` ORDER BY (price) ASC;';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
+    static public function descendingSort(){
+        try{
+            $query = 'SELECT * FROM `nft` ORDER BY (price) DESC;';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
 }
 ?>

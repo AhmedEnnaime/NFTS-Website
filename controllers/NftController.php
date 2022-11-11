@@ -90,6 +90,16 @@ class NftController{
         $nftCount = Nft::getNftNum();
         return $nftCount;
     }
+
+    public function ascSort(){
+        $ascSort = Nft::ascendingSort();
+        return $ascSort;
+    }
+
+    public function descSort(){
+        $descSort = Nft::descendingSort();
+        return $descSort;
+    }
 }
 
 ?>

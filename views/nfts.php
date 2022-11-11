@@ -3,6 +3,8 @@ session_start();
 require_once "../controllers/NftController.php";
 $data = new NftController();
 $nfts = $data->getAllNfts();
+$ascSort = $data->ascSort();
+$descSort = $data->descSort();
 ?>
 
 <html lang="en">
@@ -13,7 +15,7 @@ $nfts = $data->getAllNfts();
     <title>Document</title>
 </head>
 <body>
-<div class="auction__bottom">
+    <div class="auction__bottom">
                             <?php
                             foreach($nfts as $nft){
                                 
@@ -84,6 +86,29 @@ $nfts = $data->getAllNfts();
 
                             ?>
                            
-                        </div>
+    </div>
+
+    <?php
+    foreach($ascSort as $asc){
+        echo '
+        '.$asc['name'].'
+        '.$asc['price'].'</br>
+    
+    
+    ';
+    }
+
+    foreach($descSort as $desc){
+        echo '
+        '.$desc['name'].'
+        '.$desc['price'].'</br>
+    
+    
+    ';
+    }
+   
+
+
+    ?>
 </body>
 </html>

@@ -53,7 +53,7 @@ $collections = $data->getAllCollections();
                                 <li
                                     class="navbar__menulist navbar__menu--haschildren"
                                 >
-                                    <a href="#" class="navbar__menulink"
+                                    <a href="./home.php" class="navbar__menulink"
                                         >Home
                                     </a>
                                     
@@ -62,7 +62,7 @@ $collections = $data->getAllCollections();
                                 <li
                                     class="navbar__menulist navbar__menu--haschildren"
                                 >
-                                    <a href="#" class="navbar__menulink"
+                                    <a href="./stats.php" class="navbar__menulink"
                                         >Stats
                                     </a>
                                     
@@ -71,7 +71,7 @@ $collections = $data->getAllCollections();
                                 <li
                                     class="navbar__menulist navbar__menu--haschildren"
                                 >
-                                    <a href="#" class="navbar__menulink"
+                                    <a href="./nfts.php" class="navbar__menulink"
                                         >NFTs
                                     </a>
                                    
@@ -91,7 +91,7 @@ $collections = $data->getAllCollections();
                     <div class="navbar__item navbar__item--right">
                         <div class="navbar--right__wallet">
                            
-                            <a href="#" class="btn">
+                            <a href="./login.php" class="btn">
                                 
                                 <span id="wallet">Logout</span>
                             </a>
@@ -102,7 +102,7 @@ $collections = $data->getAllCollections();
                         </div>
                         <!-- mobile menu trigger -->
                         <div class="navbar--right__state">
-                            <a href="login.html"
+                            <a href="./profile.php"
                                 ><i class="fa-solid fa-user"></i
                             ></a>
                         

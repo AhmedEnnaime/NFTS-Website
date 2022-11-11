@@ -67,6 +67,11 @@ class CollectionsController{
             }
         }
     }
+
+    public function mostCelebrity(){
+        $celebrity = Collection::celebrityCollection();
+        return $celebrity;
+    }
 }
 
 ?>
