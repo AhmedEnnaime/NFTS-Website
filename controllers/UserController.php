@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../models/User.php";
 
 class UserController{
@@ -8,9 +9,11 @@ class UserController{
             $data['email']= $_POST['email'];
             $result = User::login($data);
             if($result->email === $_POST['email'] && password_verify($_POST['password'],$result->password)){
-                setcookie("id", $result->id);
-                setcookie("role",$result->role);
-                setcookie("logged",true);
+                $_SESSION['id'] = $result->id;
+                $_SESSION['role'] = $result->role;
+                $_SESSION['email'] = $result->email;
+                $_SESSION['logged'] = true;
+                //setcookie('email',$result->email);
                 
                 header('Location: ../views/home.php');
             }else{
@@ -39,6 +42,10 @@ class UserController{
                 echo $result;
             }
         }
+    }
+
+    static public function logout(){
+        session_destroy();
     }
 }
 

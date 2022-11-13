@@ -91,7 +91,7 @@ $collections = $data->getAllCollections();
                     <div class="navbar__item navbar__item--right">
                         <div class="navbar--right__wallet">
                            
-                            <a href="./login.php" class="btn">
+                            <a href="./logout.php" class="btn">
                                 
                                 <span id="wallet">Logout</span>
                             </a>
