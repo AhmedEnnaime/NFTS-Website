@@ -209,7 +209,7 @@ $collections = $data->getAllCollections();
                                     <div class="auction__card--media">
                                         <a href="#">
                                             <img
-                                                src="'.$collection['img'].'"
+                                                src="./images/'.$collection['img'].'"
                                                 alt=""
                                             />
                                         </a>

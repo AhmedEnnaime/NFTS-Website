@@ -8,14 +8,13 @@ class UserController{
             $data['email']= $_POST['email'];
             $result = User::login($data);
             if($result->email === $_POST['email'] && password_verify($_POST['password'],$result->password)){
-                session_start();
-                $_SESSION['logged'] == true;
-                $_SESSION['email'] == $result->email;
-                //$_SESSION['id'] == $result->id;
-                //$_SESSION['role'] == $result->role;
-                header('Location: ../views/test.php');
+                setcookie("id", $result->id);
+                setcookie("role",$result->role);
+                setcookie("logged",true);
+                
+                header('Location: ../views/home.php');
             }else{
-                echo 'email or password incorrect';
+                echo $result;
             }
         }
     }
