@@ -88,26 +88,52 @@ $collections = $data->getAllCollections();
                         </nav>
                     </div>
                     <!-- menu end -->
-                    <div class="navbar__item navbar__item--right">
-                        <div class="navbar--right__wallet">
-                           
-                            <a href="./logout.php" class="btn">
+                    <?php
+
+                        if($_SESSION['logged'] == true){
+                            echo '
+                            <div class="navbar__item navbar__item--right">
+                                <div class="navbar--right__wallet">
                                 
-                                <span id="wallet">Logout</span>
-                            </a>
-                        </div>
-                        <!-- mobile menu trigger -->
-                        <div class="mobile-menu-trigger">
-                            <span></span>
-                        </div>
-                        <!-- mobile menu trigger -->
-                        <div class="navbar--right__state">
-                            <a href="./profile.php"
-                                ><i class="fa-solid fa-user"></i
-                            ></a>
-                        
-                        </div>
-                    </div>
+                                    <a href="./logout.php" class="btn">
+                                        
+                                        <span id="wallet">Logout</span>
+                                    </a>
+                                </div>
+                                <!-- mobile menu trigger -->
+                                <div class="mobile-menu-trigger">
+                                    <span></span>
+                                </div>
+                                <!-- mobile menu trigger -->
+                                <div class="navbar--right__state">
+                                    <a href="./profile.php"
+                                        ><i class="fa-solid fa-user"></i
+                                    ></a>
+                                
+                                </div>
+                            </div>
+                            
+                            ';
+
+                        }else{
+                            echo '
+
+                            <div class="navbar__item navbar__item--right">
+                                <div class="navbar--right__wallet">
+                                
+                                    <a href="./login.php" class="btn">
+                                        
+                                        <span id="wallet">Login</span>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                            
+                            ';
+                        }
+                    
+                    ?>
+                    
                 </div>
             </div>
         </header>
@@ -162,34 +188,65 @@ $collections = $data->getAllCollections();
             </section>
             <section id="heroBox">
                 <div class="container">
-                    <div class="heroBox__wrapper">
+
+                <?php
+                if($_SESSION['logged'] == true && $_SESSION['role'] == 0){
+                    echo '
+                        <div class="heroBox__wrapper">
+                            
+                            <div class="heroBox--item">
+                                <a href="./add.php" style="text-align: center;">
+                                <i class="fa-solid fa-photo-film" style="margin-bottom:20px ;"></i>
+                                <h3>Create Your Collection</h3>
+                                </a>
+                                
+                                <p>
+                                    Click Create and set up your collection. Add
+                                    social links, a description, profile & banner
+                                    images, and set a secondary sales fee.
+                                </p>
+                            </div>
+                            <div class="heroBox--item">
+                                <a href="./addNft.php" style="text-align: center;">
+                                    <i class="fa-solid fa-image" style="margin-bottom:20px ;"></i>
+                                    <h3>Add Your NFTs</h3>
+                                </a>
+                                
+                                <p>
+                                    Upload your work (image, video, audio, or 3D
+                                    art), add a title and description, and customize
+                                    your NFTs with properties, stats
+                                </p>
+                            </div>
                         
-                        <div class="heroBox--item">
-                            <a href="./add.php" style="text-align: center;">
-                            <i class="fa-solid fa-photo-film" style="margin-bottom:20px ;"></i>
-                            <h3>Create Your Collection</h3>
-                            </a>
-                            
-                            <p>
-                                Click Create and set up your collection. Add
-                                social links, a description, profile & banner
-                                images, and set a secondary sales fee.
-                            </p>
                         </div>
-                        <div class="heroBox--item">
-                            <a href="./addNft.php" style="text-align: center;">
-                                <i class="fa-solid fa-image" style="margin-bottom:20px ;"></i>
-                                <h3>Add Your NFTs</h3>
-                            </a>
+                    ';
+                }else if($_SESSION['logged'] == true && $_SESSION['role'] == 1){
+                    echo '
+
+                        <div class="heroBox__wrapper">
+                                
+                                <div class="heroBox--item">
+                                    <a href="./addNft.php" style="text-align: center;">
+                                        <i class="fa-solid fa-image" style="margin-bottom:20px ;"></i>
+                                        <h3>Add Your NFTs</h3>
+                                    </a>
+                                    
+                                    <p>
+                                        Upload your work (image, video, audio, or 3D
+                                        art), add a title and description, and customize
+                                        your NFTs with properties, stats
+                                    </p>
+                                </div>
                             
-                            <p>
-                                Upload your work (image, video, audio, or 3D
-                                art), add a title and description, and customize
-                                your NFTs with properties, stats
-                            </p>
-                        </div>
-                       
-                    </div>
+                            </div>
+                    
+                    
+                    ';
+                }
+
+                ?>
+                   
                 </div>
             </section>
             <section id="auction">
@@ -197,27 +254,35 @@ $collections = $data->getAllCollections();
                     <div class="auction__wrapper">
                         <div class="auction__top">
                             <h2>Collections available</h2>
-                            <a href="./add.php">Add more</a>
+                            <?php 
+                                if($_SESSION['logged'] == true && $_SESSION['role'] == 0){
+                                    echo '
+                                        <a href="./add.php">Add more</a>
+                                    ';
+                                }
+                            
+                            ?>
+                            
                         </div>
                         <div class="auction__bottom">
                             <?php
-                            foreach($collections as $collection){
+                            foreach($collections as $collection){?>
                                 
-                                echo '
+                
                                 <div class="auction--item">
                                 <div class="auction__card">
                                     <div class="auction__card--media">
                                         <a href="#">
                                             <img
-                                                src="./images/'.$collection['img'].'"
+                                                src="./images/<?php echo $collection['img']; ?>"
                                                 alt=""
                                             />
                                         </a>
                                         <div class="auction__media--BtnBid">
                                             <form action="./specialNfts.php" method="POST">
-                                                <input name="id" type="hidden" value="'.$collection['id'].'">
+                                                <input name="id" type="hidden" value="<?php echo $collection['id']; ?>">
                                                 <a href="#">
-                                                    <input type="submit" name="id" value="'.$collection['id'].'">
+                                                    <input type="submit" name="id" value="<?php echo $collection['id']; ?>">
                                                     <i
                                                         class="fa-solid fa-eye"
                                                     ></i
@@ -231,7 +296,7 @@ $collections = $data->getAllCollections();
                                     <div class="auction__card--title">
                                         <h5>
                                             <a href="#"
-                                                > '.$collection['name'].'
+                                                > <?php echo $collection['name']; ?>
                                                 </a
                                             >
                                         </h5>
@@ -241,34 +306,39 @@ $collections = $data->getAllCollections();
                                             <div class="auction__author--info">
                                                 <span>Creator</span>
                                                 <h6>
-                                                    <a href="#">'.$collection['artiste'].'</a>
+                                                    <a href="#"><?php echo $collection['artiste']; ?></a>
                                                 </h6>
                                             </div>
                                         </div>
-                                        <form action="./delete.php" method="POST">
-                                            <input name="id" type="hidden" value="'.$collection['id'].'">
+                                        <?php
+                                        if($_SESSION['logged'] == true && $_SESSION['role'] == 0){?>
+                                            <form action="./delete.php" method="POST">
+                                            <input name="id" type="hidden" value="<?php echo $collection['id']; ?>">
                                             <div class="auction__info--tag">
                                                 <input value="delete" type="submit">
                                             </div>
                                             
-                                        </form>
-                                        <form action="./update.php" method="POST">
-                                            <input name="id" type="hidden" value="'.$collection['id'].'">
-                                            <div class="auction__info--tag">
-                                                <input value="update" type="submit">
-                                            </div>
-                                            
-                                        </form>
+                                            </form>
+                                            <form action="./update.php" method="POST">
+                                                <input name="id" type="hidden" value="<?php echo $collection['id']; ?>">
+                                                <div class="auction__info--tag">
+                                                    <input value="update" type="submit">
+                                                </div>
+                                                
+                                            </form>
+                                        <?php  
+
+                                        }?>
+                                       
                                     </div>
                                     
                                 </div>
                             </div>
                                 
-                                ';    
-                            
-                            }
+                                    
+                          <?php  
+                            }?>
 
-                            ?>
                            
                         </div>
                     </div>

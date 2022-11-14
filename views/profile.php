@@ -1,3 +1,10 @@
+<?php
+session_start();
+require_once "../controllers/UserController.php";
+$data = new UserController();
+$user = $data->getLoggedUser();
+?>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -92,7 +99,7 @@
                     <div class="navbar__item navbar__item--right">
                         <div class="navbar--right__wallet">
                            
-                            <a href="#" class="btn">
+                            <a href="./logout.php" class="btn">
                                 
                                 <span id="wallet">Logout</span>
                             </a>
@@ -146,16 +153,7 @@
                                             id=""
                                             placeholder="Trista Francis"
                                             autocomplete="off"
-                                        />
-                                    </div>
-                                    <div class="editProfile__account">
-                                        <label for="url">Custom URL</label>
-                                        <input
-                                            type="text"
-                                            name="url"
-                                            id=""
-                                            placeholder="Axies.Trista Francis.com/"
-                                            autocomplete="off"
+                                            value="<?php echo $user->name; ?>"
                                         />
                                     </div>
                                     <div class="editProfile__account">
@@ -166,17 +164,30 @@
                                             name="email"
                                             id=""
                                             autocomplete="off"
+                                            value="<?php echo $user->email; ?>"
                                         />
                                     </div>
                                     <div class="editProfile__account">
-                                        <label for="bio">Bio</label>
-                                        <textarea
-                                            name="bio"
+                                        <label for="url">Birthday</label>
+                                        <input
+                                            type="date"
+                                            name="url"
                                             id=""
-                                            cols="30"
-                                            rows="10"
+                                            placeholder="Axies.Trista Francis.com/"
                                             autocomplete="off"
-                                        ></textarea>
+                                            value="<?php echo $user->birthday; ?>"
+                                        />
+                                    </div>
+                                    <div class="editProfile__account">
+                                        <label for="email">Email</label>
+                                        <input
+                                            placeholder="Enter your email"
+                                            type="email"
+                                            name="email"
+                                            id=""
+                                            autocomplete="off"
+                                            value=" <?php if($user->role == 0){echo 'Admin';}else{echo 'Client';} ?>"
+                                        />
                                     </div>
                                 </div>
                                

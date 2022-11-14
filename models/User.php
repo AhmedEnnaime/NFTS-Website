@@ -38,6 +38,27 @@ class User{
 
     }
 
+    static public function getAll(){
+        $stmt = DB::connect()->prepare('SELECT * FROM user');
+        $stmt->execute();
+        return $stmt->fetchAll();
+        $stmt = null;
+    }
+
+    static public function getCurrentUser(){
+        $id = $_SESSION['id'];
+        try{
+            $query = 'SELECT * FROM user WHERE id= '.$id.'';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_OBJ);
+            return $user;
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+
+    }
+
 }
 
 ?>

@@ -47,6 +47,16 @@ class UserController{
     static public function logout(){
         session_destroy();
     }
+
+    public function getUsers(){
+        $users = User::getAll();
+        return $users;
+    }
+
+    public function getLoggedUser(){
+        $user = User::getCurrentUser();
+        return $user;
+    }
 }
 
 
