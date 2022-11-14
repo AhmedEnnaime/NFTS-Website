@@ -59,6 +59,21 @@ class User{
 
     }
 
+    static public function update($data){
+        $id = $_SESSION['id'];
+        $stmt = DB::connect()->prepare('UPDATE user SET name = :name,email = :email,birthday = :birthday WHERE id = '.$id.'');
+        $stmt->bindParam(':id',$data['id']);
+        $stmt->bindParam(':name',$data['name']);
+        $stmt->bindParam(':email',$data['email']);
+        $stmt->bindParam(':birthday',$data['birthday']);
+        if($stmt->execute()){
+            return 'ok';
+        }else{
+            return 'error';
+        }
+        $stmt = null;
+    }
+
 }
 
 ?>

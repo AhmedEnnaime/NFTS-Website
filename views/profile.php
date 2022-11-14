@@ -3,6 +3,10 @@ session_start();
 require_once "../controllers/UserController.php";
 $data = new UserController();
 $user = $data->getLoggedUser();
+if(isset($_POST[''])){
+    $user = new UserController();
+    $user->updateUser();
+}
 ?>
 
 <html lang="en">
@@ -34,7 +38,7 @@ $user = $data->getLoggedUser();
        <link rel="stylesheet" href="./css/Heros.css">
         <link rel="stylesheet" href="./css/auctions.css"/>
        <link rel="stylesheet" href="./css/item.css">
-        <link rel="stylesheet" href="./css/profiles.css">
+        <link rel="stylesheet" href="./css/profile.css">
     </head>
     <body>
         <!-- header start -->
@@ -179,7 +183,7 @@ $user = $data->getLoggedUser();
                                         />
                                     </div>
                                     <div class="editProfile__account">
-                                        <label for="email">Email</label>
+                                        <label for="email">Role</label>
                                         <input
                                             placeholder="Enter your email"
                                             type="email"

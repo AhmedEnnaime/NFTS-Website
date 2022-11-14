@@ -57,6 +57,23 @@ class UserController{
         $user = User::getCurrentUser();
         return $user;
     }
+
+    public function updateUser(){
+        if(isset($_POST['update'])){
+            $data = array(
+                'id'=> $_POST['id'],
+                'name'=>$_POST['name'],
+                'email'=>$_POST['email'],
+                'birthday'=>$_POST['birthday'],
+            );
+            $result = User::update($data);
+            if($result == 'ok'){
+                header('Location: ../views/home.php');
+            }else{
+                echo $result;
+            }
+        }
+    }
 }
 
 
