@@ -89,7 +89,7 @@ h1 {
 .form_button {
     display: block;
     margin-left: auto;
-    padding: .75rem 2rem;
+    padding: .75rem 5.7rem;
     outline: none;
     border: none;
     background-color: var(--first-color);
@@ -113,7 +113,7 @@ h1 {
     z-index: 10;
 }
 
-.form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
+.form__input:not(:placeholder-shown).form_input:not(:focus)+.form_label {
     top: -.5rem;
     left: .8rem;
     color: var(--first-color);
@@ -129,7 +129,7 @@ h1 {
 .form_button_add {
     display: block;
     margin-left: auto;
-    padding: .75rem 2rem;
+    padding: .75rem 8.3rem;
     outline: none;
     border: none;
     background-color: #000000;
@@ -159,7 +159,7 @@ h1 {
 }
 
 .card {
-    width: 400px;
+    width: 450px;
     padding: 20px;
     position: absolute;
     left: 70%;

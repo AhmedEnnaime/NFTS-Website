@@ -1,11 +1,13 @@
 <?php
 session_start();
 require_once "../controllers/UserController.php";
-$data = new UserController();
-$user = $data->getLoggedUser();
-if(isset($_POST[''])){
-    $user = new UserController();
-    $user->updateUser();
+if(isset($_POST['id'])){
+    $olduser = new UserController();
+    $user = $olduser->getLoggedUser();
+}
+if(isset($_POST['update'])){
+    $olduser = new UserController();
+    $olduser->updateUser();
 }
 ?>
 
@@ -33,7 +35,7 @@ if(isset($_POST[''])){
         /> -->
 
        <link rel="stylesheet" href="./css/layout.css">
-        <link rel="stylesheet" href="./css/navs.css">
+        <link rel="stylesheet" href="./css/nav.css">
         <link rel="stylesheet" href="./css/footer.css">
        <link rel="stylesheet" href="./css/Heros.css">
         <link rel="stylesheet" href="./css/auctions.css"/>
@@ -91,7 +93,7 @@ if(isset($_POST[''])){
                                 <li
                                     class="navbar__menulist navbar__menu--haschildren"
                                 >
-                                    <a href="#" class="navbar__menulink"
+                                    <a href="./contact.php" class="navbar__menulink"
                                         >Contact
                                             </a>
                                     
@@ -108,17 +110,9 @@ if(isset($_POST[''])){
                                 <span id="wallet">Logout</span>
                             </a>
                         </div>
-                        <!-- mobile menu trigger -->
-                        <div class="mobile-menu-trigger">
-                            <span></span>
-                        </div>
-                        <!-- mobile menu trigger -->
-                        <div class="navbar--right__state">
-                            <a href="login.html"
-                                ><i class="fa-solid fa-user"></i
-                            ></a>
-                        
-                        </div>
+                       
+                       
+                       
                     </div>
                 </div>
             </div>
@@ -144,64 +138,65 @@ if(isset($_POST[''])){
                 <div class="container">
                     
                     <div class="editProfile__right">
-                        
-                        <div class="editProfile__right--bottom">
-                            <div class="editProfile__right--account">
-                                <div class="editProfile__right--accountInfo">
-                                    <h3>Account info</h3>
-                                    <div class="editProfile__account">
-                                        <label for="name">Display name</label>
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            id=""
-                                            placeholder="Trista Francis"
-                                            autocomplete="off"
-                                            value="<?php echo $user->name; ?>"
-                                        />
+                        <form action="" method="POST">
+                            <input name="id" type="hidden" value="<?php echo $user->id; ?>">
+                            <div class="editProfile__right--bottom">
+                                <div class="editProfile__right--account">
+                                    <div class="editProfile__right--accountInfo">
+                                        <h3>Account info</h3>
+                                        <div class="editProfile__account">
+                                            <label for="name">Display name</label>
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                id=""
+                                                placeholder="Trista Francis"
+                                                autocomplete="off"
+                                                value="<?php echo $user->name; ?>"
+                                            />
+                                        </div>
+                                        <div class="editProfile__account">
+                                            <label for="email">Email</label>
+                                            <input
+                                                placeholder="Enter your email"
+                                                type="email"
+                                                name="email"
+                                                id=""
+                                                autocomplete="off"
+                                                value="<?php echo $user->email; ?>"
+                                            />
+                                        </div>
+                                        <div class="editProfile__account">
+                                            <label for="url">Birthday</label>
+                                            <input
+                                                type="date"
+                                                name="birthday"
+                                                id=""
+                                                placeholder="Axies.Trista Francis.com/"
+                                                autocomplete="off"
+                                                value="<?php echo $user->birthday; ?>"
+                                            />
+                                        </div>
+                                        <div class="editProfile__account">
+                                            <label for="text">Role</label>
+                                            <input
+                                                placeholder="Enter your email"
+                                                type="text"
+                                                name="role"
+                                                id=""
+                                                autocomplete="off"
+                                                disabled
+                                                value=" <?php if($user->role == 0){echo 'Admin';}else{echo 'Client';} ?>"
+                                            />
+                                        </div>
                                     </div>
-                                    <div class="editProfile__account">
-                                        <label for="email">Email</label>
-                                        <input
-                                            placeholder="Enter your email"
-                                            type="email"
-                                            name="email"
-                                            id=""
-                                            autocomplete="off"
-                                            value="<?php echo $user->email; ?>"
-                                        />
-                                    </div>
-                                    <div class="editProfile__account">
-                                        <label for="url">Birthday</label>
-                                        <input
-                                            type="date"
-                                            name="url"
-                                            id=""
-                                            placeholder="Axies.Trista Francis.com/"
-                                            autocomplete="off"
-                                            value="<?php echo $user->birthday; ?>"
-                                        />
-                                    </div>
-                                    <div class="editProfile__account">
-                                        <label for="email">Role</label>
-                                        <input
-                                            placeholder="Enter your email"
-                                            type="email"
-                                            name="email"
-                                            id=""
-                                            autocomplete="off"
-                                            value=" <?php if($user->role == 0){echo 'Admin';}else{echo 'Client';} ?>"
-                                        />
-                                    </div>
+                                
                                 </div>
-                               
+                                <div class="editProfile__right--updateBtn">
+                                <input class="btn" type="submit" value="Update" name="update">
+                                </div>
                             </div>
-                            <div class="editProfile__right--updateBtn">
-                                <a href="#" class="btn btn--borderColor">
-                                    <span>Update profile</span>
-                                </a>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </section>

@@ -45,12 +45,12 @@ class User{
         $stmt = null;
     }
 
-    static public function getCurrentUser(){
-        $id = $_SESSION['id'];
+    static public function getCurrentUser($data){
+        $id = $data['id'];
         try{
-            $query = 'SELECT * FROM user WHERE id= '.$id.'';
+            $query = 'SELECT * FROM user WHERE id=:id';
             $stmt = DB::connect()->prepare($query);
-            $stmt->execute();
+            $stmt->execute(array(":id" => $id));
             $user = $stmt->fetch(PDO::FETCH_OBJ);
             return $user;
         }catch(PDOException $ex){
@@ -60,8 +60,7 @@ class User{
     }
 
     static public function update($data){
-        $id = $_SESSION['id'];
-        $stmt = DB::connect()->prepare('UPDATE user SET name = :name,email = :email,birthday = :birthday WHERE id = '.$id.'');
+        $stmt = DB::connect()->prepare('UPDATE user SET name = :name,email = :email,birthday = :birthday WHERE id = :id');
         $stmt->bindParam(':id',$data['id']);
         $stmt->bindParam(':name',$data['name']);
         $stmt->bindParam(':email',$data['email']);

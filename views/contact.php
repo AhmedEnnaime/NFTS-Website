@@ -2,8 +2,13 @@
 <?php
 session_start();
 require_once "../controllers/CollectionController.php";
+require_once "../controllers/ContactController.php";
 $data = new CollectionsController();
 $collections = $data->getAllCollections();
+if(isset($_POST['add'])){
+    $newContact = new ContactController();
+    $newContact->addContact();
+}
 
 ?>
 <html lang="en">
@@ -24,9 +29,9 @@ $collections = $data->getAllCollections();
         />
         <!-- css links -->
         <link rel="stylesheet" href="./css/layout.css" />
-        <link rel="stylesheet" href="./css/nav.css">
+        <link rel="stylesheet" href="./css/contact.css">
+       <link rel="stylesheet" href="./css/nav.css">
         <link rel="stylesheet" href="./css/Heros.css">
-        <link rel="stylesheet" href="./css/auctions.css">
         <link rel="stylesheet" href="./css/footer.css" />
     </head>
     <body>
@@ -108,9 +113,8 @@ $collections = $data->getAllCollections();
                                 <div class="navbar--right__state">
                                 <form action="./profile.php" method="POST">
                                     <input name="id" type="hidden" value="'.$_SESSION['id'].'">
-                                        <input class="btn" type="submit" value="My Profile">
+                                        <button class="btn" type="submit">My profile</button>
                                 </form>
-                                    
                                 
                                 </div>
                             </div>
@@ -250,102 +254,82 @@ $collections = $data->getAllCollections();
                 ?>
                    
                 </div>
-            </section>
-            <section id="auction">
+                <section>
                 <div class="container">
-                    <div class="auction__wrapper">
-                        <div class="auction__top">
-                            <h2>Collections available</h2>
-                            <?php 
-                                if($_SESSION['logged'] == true && $_SESSION['role'] == 0){
-                                    echo '
-                                        <a href="./add.php">Add more</a>
-                                    ';
-                                }
-                            
-                            ?>
-                            
-                        </div>
-                        <div class="auction__bottom">
-                            <?php
-                            foreach($collections as $collection){?>
-                                
-                
-                                <div class="auction--item">
-                                <div class="auction__card">
-                                    <div class="auction__card--media">
-                                        <a href="#">
-                                            <img
-                                                src="./images/<?php echo $collection['img']; ?>"
-                                                alt=""
-                                            />
-                                        </a>
-                                        <div class="auction__media--BtnBid">
-                                            <form action="./specialNfts.php" method="POST">
-                                                <input name="id" type="hidden" value="<?php echo $collection['id']; ?>">
-                                                <a href="#">
-                                                    <input type="submit" name="id" value="<?php echo $collection['id']; ?>">
-                                                    <i
-                                                        class="fa-solid fa-eye"
-                                                    ></i
-                                                    >View NFTS</a
-                                                >
-                                            </form>
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="auction__card--title">
-                                        <h5>
-                                            <a href="#"
-                                                > <?php echo $collection['name']; ?>
-                                                </a
-                                            >
-                                        </h5>
-                                    </div>
-                                    <div class="auction__card--info">
-                                        <div class="auction__info--author">
-                                            <div class="auction__author--info">
-                                                <span>Creator</span>
-                                                <h6>
-                                                    <a href="#"><?php echo $collection['artiste']; ?></a>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <?php
-                                        if($_SESSION['logged'] == true && $_SESSION['role'] == 0){?>
-                                            <form action="./delete.php" method="POST">
-                                            <input name="id" type="hidden" value="<?php echo $collection['id']; ?>">
-                                            <div class="auction__info--tag">
-                                                <input value="delete" type="submit">
-                                            </div>
-                                            
-                                            </form>
-                                            <form action="./update.php" method="POST">
-                                                <input name="id" type="hidden" value="<?php echo $collection['id']; ?>">
-                                                <div class="auction__info--tag">
-                                                    <input value="update" type="submit">
-                                                </div>
-                                                
-                                            </form>
-                                        <?php  
+                    <div class="contactinfo">
+                        <div>
+                            <h2>Contact Info</h2>
+                            <ul class="info">
+                                <li>
+                                    <span><img src="./images/location-2.png"></span>
+                                    <span>Eyad Odeh Company<br>Morocco,Safi</span>
+                                </li>
+                                <li>
+                                    <span><img src="./images/email.png"></span>
+                                    <span>ahmedennaime20@gmail.com</span>
+                                </li>
+                                <li>
+                                    <span><img src="./images/telephone.png"></span>
+                                    <span>+212682622717</span>
+                                </li>
 
-                                        }?>
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                                
-                                    
-                          <?php  
-                            }?>
-
-                           
+                            </ul>
                         </div>
+                        <ul class="sci">
+                            <li><a href="https://web.facebook.com/profile.php?id=100003125472061" target="_blank"><img
+                                    src="./images/facebook.png"></a></li>
+                            <li><a href="https://www.twitter.com" target="_blank"><img src="./images/twitter.png"></a></li>
+                            <li><a href="https://www.instgram.com" target="_blank"><img src="./images/instagram.png"></a></li>
+                            <li><a href="https://www.linkedin.com" target="_blank"><img src="./images/linkedin.png"></a></li>
+                            <li><a href="https://github.com/eyad96" target="_blank"><img src="./images/github.png"></a></li>
+
+                        </ul>
+
                     </div>
+
+                    <div class="contactForm">
+                        <h2>Send a Message</h2>
+                        <div class="formBox">
+                            <form action="" method="POST">
+                            <div class="inputbox w50">
+                                <span>First Name</span>
+                                <input type="text" name="firstname" required>
+                            </div>
+                            <div class="inputbox w50">
+                                <span>Last Name</span>
+                                <input type="text" name="lastname" required>
+                            </div>
+                            <div class="inputbox w50">
+                                <span>Email Address</span>
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="inputbox w50">
+                                <span>Mobile Number</span>
+                                <input type="text" name="phone" required>
+                            </div>
+                            <div class="inputbox w100">
+                                <span>Write your message here... </span>
+                                <textarea type="text" name="message" required></textarea>
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Send" name="add">
+                            </div>
+
+                            <div class="reset">
+                                <input type="reset" value="clear" id="clear">
+                            </div>
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
                 </div>
             </section>
+
+        </section>
+           
         </main>
         <!-- main end -->
         <!-- footer start -->
@@ -428,6 +412,5 @@ $collections = $data->getAllCollections();
 
         <!-- scripts -->
         <script src="./js/menu.js"></script>
-        <script src="./js/script.js"></script>
     </body>
 </html>

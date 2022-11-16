@@ -54,8 +54,13 @@ class UserController{
     }
 
     public function getLoggedUser(){
-        $user = User::getCurrentUser();
-        return $user;
+        if(isset($_POST['id'])){
+            $data = array(
+                'id' => $_POST['id']
+            );
+            $user = User::getCurrentUser($data);
+            return $user;
+        }
     }
 
     public function updateUser(){

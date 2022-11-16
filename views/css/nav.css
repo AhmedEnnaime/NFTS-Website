@@ -8,6 +8,11 @@
     border-bottom: 1px solid rgba(235, 235, 235, 0.2);
     transition: all 0.5s ease;
 }
+.userForm{
+   padding-right: 10px;
+   padding-left: 10px;
+
+}
 .navbar .navbar__item--right {
     gap: 1rem;
     display: flex;
@@ -38,7 +43,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.navbar--right__state a {
+.navbar--right__state form a {
     background: #343444;
     border-radius: 10px;
     width: 4rem;
@@ -49,7 +54,7 @@
     align-items: center;
 }
 
-.navbar--right__state a:last-child {
+.navbar--right__state a {
     color: var(--primary-font);
     background: #4b50e6;
 }

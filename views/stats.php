@@ -95,7 +95,7 @@ $celebritys = $collections->mostCelebrity();
                                 <li
                                     class="navbar__menulist navbar__menu--haschildren"
                                 >
-                                    <a href="#" class="navbar__menulink"
+                                    <a href="./contact.php" class="navbar__menulink"
                                         >Contact
                                             </a>
                                     
