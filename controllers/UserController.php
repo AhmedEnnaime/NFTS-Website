@@ -74,6 +74,11 @@ class UserController{
             }
         }
     }
+
+    public function getCountUsers(){
+        $usersCount = User::getUsersNum();
+        return $usersCount;
+    }
 }
 
 

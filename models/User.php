@@ -74,6 +74,19 @@ class User{
         $stmt = null;
     }
 
+    static public function getUsersNum(){
+        try{
+            $query = 'SELECT COUNT(*) FROM user where role = 1;';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute();
+            $nft = $stmt->fetch(PDO::FETCH_OBJ);
+            return $nft;
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+
+    }
+
 }
 
 ?>
