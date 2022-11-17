@@ -39,7 +39,7 @@ $celebritys = $collections->mostCelebrity();
         />
         <!-- css links -->
         <link rel="stylesheet" href="./css/layout.css" />
-       <link rel="stylesheet" href="./css/navs.css">
+       <link rel="stylesheet" href="./css/nav.css">
         <link rel="stylesheet" href="./css/Heros.css">
         <link rel="stylesheet" href="./css/auctions.css">
         <link rel="stylesheet" href="./css/footer.css" />
@@ -122,10 +122,10 @@ $celebritys = $collections->mostCelebrity();
                                 </div>
                                 <!-- mobile menu trigger -->
                                 <div class="navbar--right__state">
-                                    <a href="./profile.php"
-                                        ><i class="fa-solid fa-user"></i
-                                    ></a>
-                                
+                                    <form action="./profile.php" method="POST">
+                                        <input name="id" type="hidden" value="'.$_SESSION['id'].'">
+                                            <input class="btn" type="submit" value="My Profile">
+                                    </form>
                                 </div>
                             </div>
                             
@@ -288,7 +288,7 @@ $celebritys = $collections->mostCelebrity();
 
                             <td>18 Dec 1962</td>
 
-                            <td>2000$</td>
+                            <td><button style="border:none ;font-size:40px;color:red;" ><i class="uil uil-trash-alt"></i></button></td>
 
                             </tr>
 

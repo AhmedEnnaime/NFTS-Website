@@ -24,11 +24,22 @@ class Collection{
     }
 
     static public function add($data){
+        $uplod_dir = './';
+        //$file = $_FILES['img'];
+        $fileTmp = $_FILES['img']['tmp_name'];
+        $filename = basename($_FILES['img']['name']); 
+        $target_dir =  $_SERVER['DOCUMENT_ROOT'] . "/YouCode/NFT/views/images/uploads/" . $filename;
         $stmt = DB::connect()->prepare('INSERT INTO collection (name,artiste,img) values(:name,:artiste,:img)');
         $stmt->bindParam(':name',$data['name']);
         $stmt->bindParam(':artiste',$data['artiste']);
         $stmt->bindParam(':img',$data['img']);
+       
+        //if(file_exists($target_dir)){
+          //  echo 'successefuly';
+        //}
         if($stmt->execute()){
+            //echo 'succed';
+            move_uploaded_file($fileTmp,$uplod_dir .'/'. $filename);
             return 'ok';
         }else{
             return 'error';

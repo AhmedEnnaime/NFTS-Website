@@ -64,10 +64,6 @@
     flex-direction: row;
     gap: 1rem;
     justify-content: space-evenly;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
     transition: all 1s ease;
 }
 .footer--links {
@@ -107,10 +103,6 @@
     border-radius: 1rem;
     cursor: pointer;
     color: var(--primary-font);
-    -webkit-transition: all 1.5s ease;
-    -moz-transition: all 1.5s ease;
-    -o-transition: all 1.5s ease;
-    -ms-transition: all 1.5s ease;
     transition: all 1.5s ease;
 }
 .footer--social-item:hover {

@@ -29,7 +29,7 @@ if(isset($_POST['add'])){
         />
         <!-- css links -->
         <link rel="stylesheet" href="./css/layout.css" />
-        <link rel="stylesheet" href="./css/contact.css">
+       <link rel="stylesheet" href="./css/contacts.css">
        <link rel="stylesheet" href="./css/nav.css">
         <link rel="stylesheet" href="./css/Heros.css">
         <link rel="stylesheet" href="./css/footer.css" />

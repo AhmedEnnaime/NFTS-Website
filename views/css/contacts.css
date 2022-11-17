@@ -31,7 +31,7 @@ section .container .contactinfo{
     top:40px;
     width: 350px;
     height: 500px;
-    background-color: #0D3169;
+    background-color: var(--blue);
     z-index: 1;
     padding: 40px;
     display: flex;
@@ -153,7 +153,7 @@ section .container .contactForm .formBox form .inputbox textarea {
 input[type="submit"] {
     position: relative;
     cursor: pointer;
-    background:#0D3169;
+    background:var(--blue);
     border-radius: 5px;
     color: white;
     width: 100px;
@@ -168,7 +168,7 @@ input[type="reset"]:hover{
 input[type="reset"] {
     position: relative;
     cursor: pointer;
-    background:#0D3169;
+    background:var(--blue);
     border-radius: 5px;
     color: white;
     width: 100px;

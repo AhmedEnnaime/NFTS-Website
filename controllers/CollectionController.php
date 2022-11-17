@@ -24,7 +24,7 @@ class CollectionsController{
             $data = array(
                 'name'=>$_POST['name'],
                 'artiste'=>$_POST['artiste'],
-                'img'=>$_POST['img'],
+                'img'=>$_FILES['img']['name'],
             );
             $result = Collection::add($data);
             if($result == 'ok'){

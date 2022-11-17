@@ -24,7 +24,7 @@
                                         
                                         <td><?php if($user['role'] == 0){echo 'Admin';}else{echo 'Client';} ?></td>
                                         
-                                        <td>5000$</td>
+                                        <td><button type="submit" name="delete" style="border:none ;font-size:40px;color:red;" ><i class="uil uil-trash-alt"></i></button></td>
                                   <?php  
                                 }?>
 
