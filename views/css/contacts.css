@@ -162,9 +162,7 @@ input[type="submit"] {
     margin-top: 10px;
     border: #0D3169 solid 1px;
 }
-input[type="reset"]:hover{
-    background: #333333;
-}
+
 input[type="reset"] {
     position: relative;
     cursor: pointer;
@@ -176,7 +174,4 @@ input[type="reset"] {
     margin-top: 10px;
     padding: 12px;
     border: #0D3169 solid 1px;
-}
-input[type="submit"]:hover{
-    background: #333333;
 }

@@ -86,6 +86,20 @@ class User{
 
     }
 
+    static public function delete($data){
+        $id = $data['id'];
+        try{
+            $query = 'DELETE FROM user WHERE id=:id';
+            $stmt = DB::connect()->prepare($query);
+            $stmt->execute(array(":id" => $id));
+            if($stmt->execute()){
+                return 'ok';
+            }
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }
+    }
+
 }
 
 ?>

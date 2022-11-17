@@ -177,8 +177,7 @@ $latestSort = $data->latestSort();
                 
             </script>
             <?php
-                foreach($nfts as $nft){
-                    echo '
+                foreach($nfts as $nft){?>
 
                         <li class="product-item">
 
@@ -206,13 +205,13 @@ $latestSort = $data->latestSort();
                                 <div class="product-author">
 
                                     <div class="author-content">
-                                    <a href="#" class="h4 product-title">'.$nft['name'].'</a>
+                                    <a href="#" class="h4 product-title"><?php echo $nft['name']; ?></a>
                                     </div>
 
                                 </div>
 
                                 <div class="product-price">
-                                    <data value="0.568">'.$nft['price'].'</data>
+                                    <data value="0.568"><?php echo $nft['price']; ?></data>
 
                                     <p class="label">Current price</p>
                                 </div>
@@ -220,12 +219,12 @@ $latestSort = $data->latestSort();
                                 </div>
                                 <div class="product-footer">
                                     <form method="POST" action="./deleteNft.php">
-                                        <input name="id" type="hidden" value="'.$nft['id'].'">
+                                        <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
                                         <input type="submit" class="auction__info--tag" value="Delete">
                                     </form>
 
                                     <form method="POST" action="./updateNft.php">
-                                        <input name="id" type="hidden" value="'.$nft['id'].'">
+                                        <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
                                         <input type="submit" class="auction__info--tag" value="Update">
                                     </form>
                                     
@@ -236,11 +235,8 @@ $latestSort = $data->latestSort();
                             </div>
 
                         </li>        
-                    ';
-                }
-
-            ?>
-
+                    <?php
+                }?>
             
           </ul>
 

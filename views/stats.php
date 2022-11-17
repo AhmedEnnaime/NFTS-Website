@@ -246,40 +246,48 @@ $celebritys = $collections->mostCelebrity();
                         <table >
                            
                             
-                           
-                           <tr>
-                          
-                           <th>id</th>
-                          
-                           <th>Name</th>
-                          
-                           <th>Email</th>
-                          
-                           <th>Birthday </th>
-                          
-                           <th>Role </th>
-                          
-                           <th>Delete</th>
-                           </tr>
-                               <?php
+                           <?php
+                                  if($_SESSION['logged'] == true && $_SESSION['role'] == 0){?>
+                                        <tr>
+                            
+                                        <th>id</th>
+                                        
+                                        <th>Name</th>
+                                        
+                                        <th>Email</th>
+                                        
+                                        <th>Birthday </th>
+                                        
+                                        <th>Role </th>
+                                        
+                                        <th>Delete</th>
+                                        </tr>
+                                        <?php
+                                            foreach($allUsers as $user){?>
+                                                
+                                                    <tr>
+                                                    <td><?php echo $user['id']; ?></td>
+                                        
+                                                    <td><?php echo $user['name']; ?></td>
+                                                    
+                                                    <td><?php echo $user['email']; ?></td>
+                                                    
+                                                    <td><?php echo $user['birthday']; ?></td>
+                                                    
+                                                    <td><?php if($user['role'] == 0){echo 'Admin';}else{echo 'Client';} ?></td>
+                                                    
+                                                    <td> 
+                                                            <form action="./deleteUser.php" method="POST">
+                                                                <input name="id" type="hidden" value="<?php echo $user['id']; ?>">
+                                                                <button type="submit" name="delete" style="border:none ;font-size:40px;color:red;background-color:transparent;" ><i class="uil uil-trash-alt"></i></button>
+                                                            </form> 
+                                                        </td>
+                                                    </tr>
+                                                <?php  
+                                        }?>
 
-                               foreach($allUsers as $user){?>
-                                   
-                                       <tr>
-                                       <td><?php echo $user['id']; ?></td>
-                           
-                                       <td><?php echo $user['name']; ?></td>
-                                       
-                                       <td><?php echo $user['email']; ?></td>
-                                       
-                                       <td><?php echo $user['birthday']; ?></td>
-                                       
-                                       <td><?php if($user['role'] == 0){echo 'Admin';}else{echo 'Client';} ?></td>
-                                       
-                                       <td><button type="submit" name="delete" style="border:none ;font-size:40px;color:red;background-color:transparent;" ><i class="uil uil-trash-alt"></i></button></td>
-                                       </tr>
-                                 <?php  
-                               }?>
+                                   <?php 
+                                  }?>
                           
                            </table>
                              

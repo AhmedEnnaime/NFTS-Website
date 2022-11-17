@@ -84,6 +84,18 @@ class UserController{
         $usersCount = User::getUsersNum();
         return $usersCount;
     }
+
+    public function deleteUser(){
+        if(isset($_POST['id'])){
+            $data['id']= $_POST['id'];
+            $result = User::delete($data);
+            if($result == 'ok'){
+                header('Location: ../views/stats.php');
+            }else{
+                echo $result;
+            }
+        }
+    }
 }
 
 
