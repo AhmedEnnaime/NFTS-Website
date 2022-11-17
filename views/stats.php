@@ -43,7 +43,7 @@ $celebritys = $collections->mostCelebrity();
         <link rel="stylesheet" href="./css/Heros.css">
         <link rel="stylesheet" href="./css/auctions.css">
         <link rel="stylesheet" href="./css/footer.css" />
-        <link rel="stylesheet" href="./css/stat.css">
+        <link rel="stylesheet" href="./css/stats.css">
     </head>
     <body>
         <!-- header start -->
@@ -242,158 +242,52 @@ $celebritys = $collections->mostCelebrity();
                               </script>
                           </div>
                         </div>
-                           
-                            <table >
+                        <div class="table">
+                        <table >
                            
                             
                            
-                            <tr>
+                           <tr>
+                          
+                           <th>id</th>
+                          
+                           <th>Name</th>
+                          
+                           <th>Email</th>
+                          
+                           <th>Birthday </th>
+                          
+                           <th>Role </th>
+                          
+                           <th>Delete</th>
+                           </tr>
+                               <?php
+
+                               foreach($allUsers as $user){?>
+                                   
+                                       <tr>
+                                       <td><?php echo $user['id']; ?></td>
                            
-                            <th>id</th>
-                           
-                            <th>Name</th>
-                           
-                            <th>Email</th>
-                           
-                            <th>Birthday </th>
-                           
-                            <th>Role </th>
-                           
-                            <th>Delete</th>
-                            <tr>
+                                       <td><?php echo $user['name']; ?></td>
+                                       
+                                       <td><?php echo $user['email']; ?></td>
+                                       
+                                       <td><?php echo $user['birthday']; ?></td>
+                                       
+                                       <td><?php if($user['role'] == 0){echo 'Admin';}else{echo 'Client';} ?></td>
+                                       
+                                       <td><button type="submit" name="delete" style="border:none ;font-size:40px;color:red;background-color:transparent;" ><i class="uil uil-trash-alt"></i></button></td>
+                                       </tr>
+                                 <?php  
+                               }?>
+                          
+                           </table>
+                             
+                        
+             
 
-                            <td>1</td>
 
-                            <td>Jean</td>
-
-                            <td>leBon</td>
-
-                            <td>1368</td>
-
-                            <td>18 Nov 1962</td>
-
-                            <td>5000$</td>
-
-                            </tr>
-
-                            <tr>
-
-                            <td>2</td>
-
-                            <td>jack</td>
-
-                            <td>Duppont</td>
-
-                            <td>1368</td>
-
-                            <td>18 Dec 1962</td>
-
-                            <td><button style="border:none ;font-size:40px;color:red;" ><i class="uil uil-trash-alt"></i></button></td>
-
-                            </tr>
-
-                            <tr>
-
-                            <td>3</td>
-
-                            <td>Jean</td>
-
-                            <td>leBon</td>
-
-                            <td>1368</td>
-
-                            <td>18 Nov 1972</td>
-
-                            <td>4200$</td>
-
-                            </tr>
-
-                            <tr>
-
-                            <td>4</td>
-
-                            <td>Nadia</td>
-
-                            <td>leBon</td>
-
-                            <td>1368</td>
-
-                            <td>18 Mar 1982</td>
-
-                            <td>6300$</td>
-
-                            </tr>
-
-                            <tr>
-
-                            <td>5</td>
-
-                            <td>Nadia</td>
-
-                            <td>leBon</td>
-
-                            <td>1368</td>
-
-                            <td>18 Mar 1982</td>
-
-                            <td>6300$</td>
-
-                            </tr>
-
-                            <tr>
-
-                            <td>6</td>
-
-                            <td>Nadia</td>
-
-                            <td>leBon</td>
-
-                            <td>1368</td>
-
-                            <td>18 Mar 1982</td>
-
-                            <td>6300$</td>
-
-                            </tr>
-
-                            <tr>
-
-                            <td>7</td>
-
-                            <td>Nadia</td>
-
-                            <td>leBon</td>
-
-                            <td>1368</td>
-
-                            <td>18 Mar 1982</td>
-
-                            <td>6300$</td>
-
-                            </tr>
-
-                            <tr>
-
-                            <td>8</td>
-
-                            <td>Nadia</td>
-
-                            <td>leBon</td>
-
-                            <td>1368</td>
-
-                            <td>18 Mar 1982</td>
-
-                            <td>6300$</td>
-
-                            </tr>
-                                                    
-                            </tr>
-                           
-                            </table>
-                              
-                         
-              
+                        </div>
 
                 
                 </div>
@@ -407,7 +301,7 @@ $celebritys = $collections->mostCelebrity();
                 <div class="footer__wrapper">
                     <div class="footer--item">
                         <a href="#">
-                            <img src="image/01_header/logo_dark.png" alt="" />
+                            <img src="./images/logo1.png" style="width: 120px;height:100px;" alt="" />
                         </a>
                         <p>
                             Lorem ipsum dolor sit amet,consectetur adipisicing

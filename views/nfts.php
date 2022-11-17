@@ -143,10 +143,10 @@ $latestSort = $data->latestSort();
             <h2 class="h2 section-title">Explore Product</h2>
             <form action="" method="POST">
                 <select name="sort" class="btn btn-primary" id="sortOption">
-                    <option class="sortOption" value=""> <button>All</button> </option>
-                    <option class="sortOption" value=""> <button>Sort by price asc</button> </option>
-                    <option class="sortOption" value=""><button>Sort by price asc</button></option>
-                    <option class="sortOption" value=""><button>Sort by date</button></option>
+                    <option selected="selected" class="All" value="All"> All </option>
+                    <option class="sortOption" value="Sort by price asc"> Sort by price asc </option>
+                    <option class="sortOption" value="Sort by price desc">Sort by price desc</option>
+                    <option class="sortOption" value="Sort by date">Sort by date</option>
                     <!-- <input type="submit" value="send"> -->
                 </select>
             </form>
@@ -154,14 +154,24 @@ $latestSort = $data->latestSort();
           </div>
 
           <ul class="product-list">
-            <script>
-                const sortOption = document.querySelectorAll('.sortOption')
-                for(option of sortOption){
-                    console.log(option.textContent);
-                    option.addEventListener(('click'),()=>{
-                        console.log('accees');
-                    })
-                }
+            <script type="text/javascript">
+                const selectOption = document.querySelector('#sortOption')
+                selectOption.addEventListener(('change'), (event)=>{
+                    console.log(event.target.value)
+                    if(event.target.value == "Sort by price asc"){
+                       <?php
+
+                            echo 'hccce';
+                        ?>
+
+                    }else if(event.target.value == "Sort by price desc"){
+
+                    }else if(event.target.value == "Sort by date"){
+
+                    }else{
+
+                    }
+                }) 
                 
 
                 
@@ -242,7 +252,7 @@ $latestSort = $data->latestSort();
                 <div class="footer__wrapper">
                     <div class="footer--item">
                         <a href="#">
-                            <img src="image/01_header/logo_dark.png" alt="" />
+                            <img src="./images/logo1.png" style="width: 120px;height:100px;" alt="" />
                         </a>
                         <p>
                             Lorem ipsum dolor sit amet,consectetur adipisicing

@@ -338,7 +338,7 @@ if(isset($_POST['add'])){
                 <div class="footer__wrapper">
                     <div class="footer--item">
                         <a href="#">
-                            <img src="image/01_header/logo_dark.png" alt="" />
+                        <img src="./images/logo1.png" style="width: 120px;height:100px;" alt="" />
                         </a>
                         <p>
                             Lorem ipsum dolor sit amet,consectetur adipisicing
