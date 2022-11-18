@@ -143,10 +143,11 @@ $latestSort = $data->latestSort();
             <h2 class="h2 section-title">Explore Product</h2>
             <form action="" method="POST">
                 <select name="sort" class="btn btn-primary" id="sortOption">
-                    <option selected="selected" class="All" value="All"> All </option>
+                    <option class="All" value="All"> All </option>
                     <option class="sortOption" value="Sort by price asc"> Sort by price asc </option>
                     <option class="sortOption" value="Sort by price desc">Sort by price desc</option>
-                    <option class="sortOption" value="Sort by date">Sort by date</option>
+                    <option class="sortOption" value="Sort by latest date">Sort by latest date</option>
+                    <option class="sortOption" value="Sort by oldest date">Sort by oldest date</option>
                     <!-- <input type="submit" value="send"> -->
                 </select>
             </form>
@@ -155,28 +156,222 @@ $latestSort = $data->latestSort();
 
           <ul class="product-list">
             <script type="text/javascript">
+                let choice = 0;
                 const selectOption = document.querySelector('#sortOption')
                 selectOption.addEventListener(('change'), (event)=>{
                     console.log(event.target.value)
                     if(event.target.value == "Sort by price asc"){
-                       <?php
-
-                            echo 'hccce';
-                        ?>
+                       choice = 1;
 
                     }else if(event.target.value == "Sort by price desc"){
+                        choice = 2;
 
-                    }else if(event.target.value == "Sort by date"){
-
+                    }else if(event.target.value == "Sort by latest date"){
+                        choice = 3;
                     }else{
-
+                        choice = 4;
                     }
-                }) 
-                
-
-                
+                    document.cookie = "choice="+choice;
+                   //console.log(choice);
+                })  
             </script>
-            <?php
+            <?php 
+                $sort_value = $_COOKIE['choice'];
+                if($sort_value == 1){?>
+                    <?php
+                        foreach($ascSort as $asc){?>
+
+                                <li class="product-item">
+
+                                    <div class="product-card" tabindex="0">
+
+                                    <figure class="product-banner">
+
+                                        <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+
+                                        <div class="product-actions">
+
+                                        <button class="add-to-whishlist" data-whishlist-btn>
+                                            <ion-icon name="heart"></ion-icon>
+                                        </button>
+                                        </div>
+
+                                        <button class="place-bid-btn">Description</button>
+
+                                    </figure>
+
+                                    <div class="product-content">
+
+                                        <div class="product-meta">
+
+                                        <div class="product-author">
+
+                                            <div class="author-content">
+                                            <a href="#" class="h4 product-title"><?php echo $asc['name']; ?></a>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="product-price">
+                                            <data value="0.568"><?php echo $asc['price']; ?></data>
+
+                                            <p class="label">Current price</p>
+                                        </div>
+
+                                        </div>
+                                        <div class="product-footer">
+                                            <form method="POST" action="./deleteNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $asc['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Delete">
+                                            </form>
+
+                                            <form method="POST" action="./updateNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $asc['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Update">
+                                            </form>
+                                            
+                                        </div>
+
+                                    </div>
+
+                                    </div>
+
+                                </li>        
+                            <?php
+                    }?>
+
+                    
+                    <?php
+                }else if($sort_value == 2){?>
+
+                    <?php
+                foreach($descSort as $desc){?>
+
+                        <li class="product-item">
+
+                            <div class="product-card" tabindex="0">
+
+                            <figure class="product-banner">
+
+                                <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+
+                                <div class="product-actions">
+
+                                <button class="add-to-whishlist" data-whishlist-btn>
+                                    <ion-icon name="heart"></ion-icon>
+                                </button>
+                                </div>
+
+                                <button class="place-bid-btn">Description</button>
+
+                            </figure>
+
+                            <div class="product-content">
+
+                                <div class="product-meta">
+
+                                <div class="product-author">
+
+                                    <div class="author-content">
+                                    <a href="#" class="h4 product-title"><?php echo $desc['name']; ?></a>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-price">
+                                    <data value="0.568"><?php echo $desc['price']; ?></data>
+
+                                    <p class="label">Current price</p>
+                                </div>
+
+                                </div>
+                                <div class="product-footer">
+                                    <form method="POST" action="./deleteNft.php">
+                                        <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
+                                        <input type="submit" class="auction__info--tag" value="Delete">
+                                    </form>
+
+                                    <form method="POST" action="./updateNft.php">
+                                        <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
+                                        <input type="submit" class="auction__info--tag" value="Update">
+                                    </form>
+                                    
+                                </div>
+
+                            </div>
+
+                            </div>
+
+                        </li>        
+                    <?php
+                }?>
+
+                    <?php
+                }else if($sort_value == 3){?>
+                    <?php
+                foreach($latestSort as $latest){?>
+
+                        <li class="product-item">
+
+                            <div class="product-card" tabindex="0">
+
+                            <figure class="product-banner">
+
+                                <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+
+                                <div class="product-actions">
+
+                                <button class="add-to-whishlist" data-whishlist-btn>
+                                    <ion-icon name="heart"></ion-icon>
+                                </button>
+                                </div>
+
+                                <button class="place-bid-btn">Description</button>
+
+                            </figure>
+
+                            <div class="product-content">
+
+                                <div class="product-meta">
+
+                                <div class="product-author">
+
+                                    <div class="author-content">
+                                    <a href="#" class="h4 product-title"><?php echo $latest['name']; ?></a>
+                                    </div>
+
+                                </div>
+
+                                <div class="product-price">
+                                    <data value="0.568"><?php echo $latest['price']; ?></data>
+
+                                    <p class="label">Current price</p>
+                                </div>
+
+                                </div>
+                                <div class="product-footer">
+                                    <form method="POST" action="./deleteNft.php">
+                                        <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
+                                        <input type="submit" class="auction__info--tag" value="Delete">
+                                    </form>
+
+                                    <form method="POST" action="./updateNft.php">
+                                        <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
+                                        <input type="submit" class="auction__info--tag" value="Update">
+                                    </form>
+                                    
+                                </div>
+
+                            </div>
+
+                            </div>
+
+                        </li>        
+                    <?php
+                }?>
+                    <?php
+                }else{?>
+                    <?php
                 foreach($nfts as $nft){?>
 
                         <li class="product-item">
@@ -235,6 +430,9 @@ $latestSort = $data->latestSort();
                             </div>
 
                         </li>        
+                    <?php
+                }?>
+
                     <?php
                 }?>
             
@@ -345,6 +543,12 @@ $latestSort = $data->latestSort();
     foreach($latestSort as $latest){
         echo '
         '.$latest['name'].'</br>
+    ';
+    }
+
+    foreach($nfts as $nft){
+        echo '
+        '.$nft['name'].'</br>
     ';
     }
    
