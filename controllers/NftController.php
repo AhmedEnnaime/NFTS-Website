@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../models/Nft.php";
 
 class NftController{
@@ -26,6 +27,7 @@ class NftController{
                 'description'=>$_POST['description'],
                 'img'=>$_POST['img'],
                 'price'=>$_POST['price'],
+                'user_id'=>$_SESSION['id'],
             );
             $result = Nft::add($data);
             if($result == 'ok'){

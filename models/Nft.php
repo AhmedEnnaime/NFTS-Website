@@ -25,12 +25,13 @@ class Nft{
     }
 
     static public function add($data){
-        $stmt = DB::connect()->prepare('INSERT INTO nft (name,collection_id,description,img,price) values(:name,:collection_id,:description,:img,:price)');
+        $stmt = DB::connect()->prepare('INSERT INTO nft (name,collection_id,description,img,price,user_id) values(:name,:collection_id,:description,:img,:price,:user_id)');
         $stmt->bindParam(':name',$data['name']);
         $stmt->bindParam(':collection_id',$data['collection_id']);
         $stmt->bindParam(':description',$data['description']);
         $stmt->bindParam(':img',$data['img']);
         $stmt->bindParam(':price',$data['price']);
+        $stmt->bindParam(':user_id',$data['user_id']);
         if($stmt->execute()){
             return 'ok';
         }else{

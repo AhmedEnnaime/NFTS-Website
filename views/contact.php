@@ -293,23 +293,23 @@ if(isset($_POST['add'])){
                             <form action="" method="POST">
                             <div class="inputbox w50">
                                 <span>First Name</span>
-                                <input type="text" name="firstname" required>
+                                <input type="text" name="firstname" placeholder="Enter your firstname" required>
                             </div>
                             <div class="inputbox w50">
                                 <span>Last Name</span>
-                                <input type="text" name="lastname" required>
+                                <input type="text" name="lastname" placeholder="Enter your lastname" required>
                             </div>
                             <div class="inputbox w50">
                                 <span>Email Address</span>
-                                <input type="email" name="email" required>
+                                <input type="email" name="email" placeholder="Enter your email" required>
                             </div>
                             <div class="inputbox w50">
                                 <span>Mobile Number</span>
-                                <input type="text" name="phone" required>
+                                <input type="text" name="phone" placeholder="Enter your phone number" required>
                             </div>
                             <div class="inputbox w100">
                                 <span>Write your message here... </span>
-                                <textarea type="text" name="message" required></textarea>
+                                <textarea type="text" name="message" placeholder="Enter your message" required></textarea>
                             </div>
                             <div class="submit">
                                 <input type="submit" value="Send" name="add">

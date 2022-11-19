@@ -219,6 +219,9 @@ $latestSort = $data->latestSort();
                                         </div>
 
                                         </div>
+                                        <?php
+
+                                    if($_SESSION['logged'] == true && $_SESSION['role'] == 0){?>
                                         <div class="product-footer">
                                             <form method="POST" action="./deleteNft.php">
                                                 <input name="id" type="hidden" value="<?php echo $asc['id']; ?>">
@@ -231,6 +234,32 @@ $latestSort = $data->latestSort();
                                             </form>
                                             
                                         </div>
+
+                                        <?php
+                                    }else if($_SESSION['logged'] == true && $_SESSION['role'] == 1){?>
+                                        <?php
+                                            if($asc['user_id'] == $_SESSION['id']){?>
+                                                <div class="product-footer">
+                                                    <form method="POST" action="./deleteNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $asc['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Delete">
+                                                    </form>
+
+                                                    <form method="POST" action="./updateNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $asc['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Update">
+                                                    </form>
+                                                    
+                                                </div>
+
+                                                <?php
+                                            }
+                                        
+                                        ?>
+
+                                        <?php
+                                    }?>
+                               
 
                                     </div>
 
@@ -285,18 +314,47 @@ $latestSort = $data->latestSort();
                                 </div>
 
                                 </div>
-                                <div class="product-footer">
-                                    <form method="POST" action="./deleteNft.php">
-                                        <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
-                                        <input type="submit" class="auction__info--tag" value="Delete">
-                                    </form>
+                                <?php
 
-                                    <form method="POST" action="./updateNft.php">
-                                        <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
-                                        <input type="submit" class="auction__info--tag" value="Update">
-                                    </form>
-                                    
-                                </div>
+                                    if($_SESSION['logged'] == true && $_SESSION['role'] == 0){?>
+                                        <div class="product-footer">
+                                            <form method="POST" action="./deleteNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Delete">
+                                            </form>
+
+                                            <form method="POST" action="./updateNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Update">
+                                            </form>
+                                            
+                                        </div>
+
+                                        <?php
+                                    }else if($_SESSION['logged'] == true && $_SESSION['role'] == 1){?>
+                                        <?php
+                                            if($desc['user_id'] == $_SESSION['id']){?>
+                                                <div class="product-footer">
+                                                    <form method="POST" action="./deleteNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Delete">
+                                                    </form>
+
+                                                    <form method="POST" action="./updateNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $desc['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Update">
+                                                    </form>
+                                                    
+                                                </div>
+
+                                                <?php
+                                            }
+                                        
+                                        ?>
+
+                                        <?php
+                                    }?>
+
 
                             </div>
 
@@ -349,18 +407,47 @@ $latestSort = $data->latestSort();
                                 </div>
 
                                 </div>
-                                <div class="product-footer">
-                                    <form method="POST" action="./deleteNft.php">
-                                        <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
-                                        <input type="submit" class="auction__info--tag" value="Delete">
-                                    </form>
+                                <?php
 
-                                    <form method="POST" action="./updateNft.php">
-                                        <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
-                                        <input type="submit" class="auction__info--tag" value="Update">
-                                    </form>
-                                    
-                                </div>
+                                    if($_SESSION['logged'] == true && $_SESSION['role'] == 0){?>
+                                        <div class="product-footer">
+                                            <form method="POST" action="./deleteNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Delete">
+                                            </form>
+
+                                            <form method="POST" action="./updateNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Update">
+                                            </form>
+                                            
+                                        </div>
+
+                                        <?php
+                                    }else if($_SESSION['logged'] == true && $_SESSION['role'] == 1){?>
+                                        <?php
+                                            if($latest['user_id'] == $_SESSION['id']){?>
+                                                <div class="product-footer">
+                                                    <form method="POST" action="./deleteNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Delete">
+                                                    </form>
+
+                                                    <form method="POST" action="./updateNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $latest['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Update">
+                                                    </form>
+                                                    
+                                                </div>
+
+                                                <?php
+                                            }
+                                        
+                                        ?>
+
+                                        <?php
+                                    }?>
+                               
 
                             </div>
 
@@ -412,19 +499,47 @@ $latestSort = $data->latestSort();
                                 </div>
 
                                 </div>
-                                <div class="product-footer">
-                                    <form method="POST" action="./deleteNft.php">
-                                        <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
-                                        <input type="submit" class="auction__info--tag" value="Delete">
-                                    </form>
+                                <?php
 
-                                    <form method="POST" action="./updateNft.php">
-                                        <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
-                                        <input type="submit" class="auction__info--tag" value="Update">
-                                    </form>
-                                    
-                                </div>
+                                    if($_SESSION['logged'] == true && $_SESSION['role'] == 0){?>
+                                        <div class="product-footer">
+                                            <form method="POST" action="./deleteNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Delete">
+                                            </form>
 
+                                            <form method="POST" action="./updateNft.php">
+                                                <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
+                                                <input type="submit" class="auction__info--tag" value="Update">
+                                            </form>
+                                            
+                                        </div>
+
+                                        <?php
+                                    }else if($_SESSION['logged'] == true && $_SESSION['role'] == 1){?>
+                                        <?php
+                                            if($nft['user_id'] == $_SESSION['id']){?>
+                                                <div class="product-footer">
+                                                    <form method="POST" action="./deleteNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Delete">
+                                                    </form>
+
+                                                    <form method="POST" action="./updateNft.php">
+                                                        <input name="id" type="hidden" value="<?php echo $nft['id']; ?>">
+                                                        <input type="submit" class="auction__info--tag" value="Update">
+                                                    </form>
+                                                    
+                                                </div>
+
+                                                <?php
+                                            }
+                                        
+                                        ?>
+
+                                        <?php
+                                    }?>
+                               
                             </div>
 
                             </div>
@@ -518,40 +633,3 @@ $latestSort = $data->latestSort();
     
 </body>
 </html>
-
-
-
-    <?php
-    foreach($ascSort as $asc){
-        echo '
-        '.$asc['name'].'
-        '.$asc['price'].'</br>
-    
-    
-    ';
-    }
-
-    foreach($descSort as $desc){
-        echo '
-        '.$desc['name'].'
-        '.$desc['price'].'</br>
-    
-    
-    ';
-    }
-
-    foreach($latestSort as $latest){
-        echo '
-        '.$latest['name'].'</br>
-    ';
-    }
-
-    foreach($nfts as $nft){
-        echo '
-        '.$nft['name'].'</br>
-    ';
-    }
-   
-
-
-    ?>

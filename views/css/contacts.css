@@ -31,10 +31,11 @@ section .container .contactinfo{
     top:40px;
     width: 350px;
     height: 500px;
-    background-color: var(--blue);
+    background-color:rgb(24, 22, 22);
     z-index: 1;
     padding: 40px;
     display: flex;
+    border-radius: 18px;
     justify-content: space-between;
     flex-direction: column;
     box-shadow: 0 20px 20px rgb( 0, 0 , 0.2);
@@ -100,16 +101,17 @@ section .container .contactinfo .sci li:hover a img {
 }
 section .container .contactForm {
     position: absolute;
-    background: white;
+    background: rgb(51, 50, 50);
     padding: 70px 50px;
     margin-left: 150px;
     padding-left: 250px;
     width: calc(100% - 150px);
     height: 580px;
+    border-radius: 18px;
     box-shadow: 0 50px 50px rgb(0.0.0.5);
 }
 section .container .contactForm h2 {
-    color: #0D3169 ;
+    color: white ;
     font-size: 24px;
     font-weight: 500;
 
@@ -133,6 +135,14 @@ section .container .contactForm .formBox form .inputbox.w100 {
     width: 100%;
 }
 
+section .container .contactForm .formBox form .inputbox.w50 span{
+    color: white;
+}
+
+section .container .contactForm .formBox form .inputbox.w100 span{
+    color: white;
+}
+
 section .container .contactForm .formBox form .inputbox input ,
 section .container .contactForm .formBox form .inputbox textarea{
     width: 100%;
@@ -142,10 +152,16 @@ section .container .contactForm .formBox form .inputbox textarea{
     font-weight: 300;
     color:#333;
     border: solid 1px;
-    border-radius: 3px;
+    border-radius: 7px;
     outline-color: #0D3169;
     border-bottom: 1px solid #777;
 
+}
+section .container .contactForm .formBox form .inputbox input::placeholder{
+    padding-left: 20px;
+}
+section .container .contactForm .formBox form .inputbox textarea::placeholder{
+    padding-left: 20px;
 }
 section .container .contactForm .formBox form .inputbox textarea {
     min-height: 120px;
@@ -153,25 +169,25 @@ section .container .contactForm .formBox form .inputbox textarea {
 input[type="submit"] {
     position: relative;
     cursor: pointer;
-    background:var(--blue);
+    background:rgb(24, 22, 22);
     border-radius: 5px;
     color: white;
     width: 100px;
     max-width: 150px;
     padding: 12px;
     margin-top: 10px;
-    border: #0D3169 solid 1px;
+    border: none;
 }
 
 input[type="reset"] {
     position: relative;
     cursor: pointer;
-    background:var(--blue);
+    background:rgb(24, 22, 22);
     border-radius: 5px;
     color: white;
     width: 100px;
     max-width: 150px;
     margin-top: 10px;
     padding: 12px;
-    border: #0D3169 solid 1px;
+    border: none;
 }
