@@ -177,6 +177,12 @@
     border: 1px solid var(--onyx-2);
     border-radius: 8px;
   }
+
+  /* .product-card:hover {
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d; 
+    transition: transform 1s;
+  } */
   
   .product-banner {
     position: relative;

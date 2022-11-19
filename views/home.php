@@ -30,116 +30,7 @@ $collections = $data->getAllCollections();
         <link rel="stylesheet" href="./css/footer.css" />
     </head>
     <body>
-        <!-- header start -->
-        <header id="header">
-            <div class="container">
-                <div class="navbar">
-                    <div class="navbar__item navbar__item--left">
-                        <div class="navbar__logo">
-                            <a href="#">
-                                <img
-                                    src="./images/logo1.png"
-                                    alt="Axies"
-                                    width="100px"
-                                    height="80px"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                    <!-- menu start -->
-                    <div class="navbar__item navbar__item--center">
-                        <nav class="navbar__menu">
-                            <ul class="navbar__menulists">
-                                <li
-                                    class="navbar__menulist navbar__menu--haschildren"
-                                >
-                                    <a href="./home.php" class="navbar__menulink"
-                                        >Home
-                                    </a>
-                                    
-                                </li>
-                
-                                <li
-                                    class="navbar__menulist navbar__menu--haschildren"
-                                >
-                                    <a href="./stats.php" class="navbar__menulink"
-                                        >Stats
-                                    </a>
-                                    
-                                </li>
-                                
-                                <li
-                                    class="navbar__menulist navbar__menu--haschildren"
-                                >
-                                    <a href="./nfts.php" class="navbar__menulink"
-                                        >NFTs
-                                    </a>
-                                   
-                                </li>
-                                <li
-                                    class="navbar__menulist navbar__menu--haschildren"
-                                >
-                                    <a href="./contact.php" class="navbar__menulink"
-                                        >Contact
-                                            </a>
-                                    
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- menu end -->
-                    <?php
-
-                        if($_SESSION['logged'] == true){
-                            echo '
-                            <div class="navbar__item navbar__item--right">
-                                <div class="navbar--right__wallet">
-                                
-                                    <a href="./logout.php" class="btn">
-                                        
-                                        <span id="wallet">Logout</span>
-                                    </a>
-                                </div>
-                                <!-- mobile menu trigger -->
-                                <div class="mobile-menu-trigger">
-                                    <span></span>
-                                </div>
-                                <!-- mobile menu trigger -->
-                                <div class="navbar--right__state">
-                                <form action="./profile.php" method="POST">
-                                    <input name="id" type="hidden" value="'.$_SESSION['id'].'">
-                                        <input class="btn" type="submit" value="My Profile">
-                                </form>
-                                    
-                                
-                                </div>
-                            </div>
-                            
-                            ';
-
-                        }else{
-                            echo '
-
-                            <div class="navbar__item navbar__item--right">
-                                <div class="navbar--right__wallet">
-                                
-                                    <a href="./login.php" class="btn">
-                                        
-                                        <span id="wallet">Login</span>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                            
-                            ';
-                        }
-                    
-                    ?>
-                    
-                </div>
-            </div>
-        </header>
-        <!-- header end -->
+       <?php include "./includes/nav.php"; ?>
         <!-- main start -->
         <main id="main">
             
@@ -276,7 +167,7 @@ $collections = $data->getAllCollections();
                                     <div class="auction__card--media">
                                         <a href="#">
                                             <img
-                                                src="./images/<?php echo $collection['img']; ?>"
+                                                src="./images/uploads/<?php echo $collection['img']; ?>"
                                                 alt=""
                                             />
                                         </a>
@@ -348,79 +239,7 @@ $collections = $data->getAllCollections();
             </section>
         </main>
         <!-- main end -->
-        <!-- footer start -->
-        <footer id="footer">
-            <div class="container">
-                <div class="footer__wrapper">
-                    <div class="footer--item">
-                        <a href="#">
-                        <img src="./images/logo1.png" style="width: 120px;height:100px;" alt="" />
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet,consectetur adipisicing
-                            elit. Quis non, fugit totam vel laboriosam vitae.
-                        </p>
-                    </div>
-                    <div class="footer--item">
-                        <h3 class="footer--title">My Account</h3>
-                        <div class="footer--links">
-                            <a href="#">Authors</a>
-                            <a href="#">Collection</a>
-                            <a href="#">Author Profile</a>
-                            <a href="#">Create Item</a>
-                        </div>
-                    </div>
-                    <div class="footer--item">
-                        <h3 class="footer--title">Resources</h3>
-                        <div class="footer--links">
-                            <a href="#">Help & Support</a>
-                            <a href="#">Live Auctions</a>
-                            <a href="#">Item Details</a>
-                            <a href="#">Activity</a>
-                        </div>
-                    </div>
-                    <div class="footer--item">
-                        <h3 class="footer--title">Company</h3>
-                        <div class="footer--links">
-                            <a href="#">Explore</a>
-                            <a href="#">Contact Us</a>
-                            <a href="#">Our Blog</a>
-                            <a href="#">FAQ</a>
-                        </div>
-                    </div>
-                    <div class="footer--item">
-                        <h3 class="footer--title">Resources</h3>
-                        <div class="footer--email">
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                placeholder="info@youremail.com"
-                            />
-                            <button type="submit" class="footer__email--submit">
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </div>
-                        <div class="footer--socials">
-                            <i
-                                class="fa-brands fa-twitter footer--social-item"
-                            ></i>
-                            <i
-                                class="fa-brands fa-facebook footer--social-item"
-                            ></i>
-                            <i
-                                class="fa-brands fa-instagram footer--social-item"
-                            ></i>
-                            <i
-                                class="fa-brands fa-youtube footer--social-item"
-                            ></i>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- footer end -->
+       <?php include "./includes/footer.php"; ?>
         <!-- scroll -->
         <div id="scroll--top">
             <i class="fa-solid fa-angle-up"></i>
@@ -428,6 +247,5 @@ $collections = $data->getAllCollections();
 
         <!-- scripts -->
         <script src="./js/menu.js"></script>
-        <script src="./js/script.js"></script>
     </body>
 </html>

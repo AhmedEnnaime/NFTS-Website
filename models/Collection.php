@@ -24,11 +24,12 @@ class Collection{
     }
 
     static public function add($data){
-        $uplod_dir = './';
-        //$file = $_FILES['img'];
+        //$uplod_dir = '../views/images/uploads';
+        $file = $_FILES['img']['name'];
+        $folder = '../views/images/uploads/' . $file;
         $fileTmp = $_FILES['img']['tmp_name'];
-        $filename = basename($_FILES['img']['name']); 
-        $target_dir =  $_SERVER['DOCUMENT_ROOT'] . "/YouCode/NFT/views/images/uploads/" . $filename;
+        //$filename = basename($_FILES['img']['name']); 
+        //$target_dir =  $_SERVER['DOCUMENT_ROOT'] . "/YouCode/NFT/views/images/uploads/" . $filename;
         $stmt = DB::connect()->prepare('INSERT INTO collection (name,artiste,img) values(:name,:artiste,:img)');
         $stmt->bindParam(':name',$data['name']);
         $stmt->bindParam(':artiste',$data['artiste']);
@@ -39,7 +40,7 @@ class Collection{
         //}
         if($stmt->execute()){
             //echo 'succed';
-            move_uploaded_file($fileTmp,$uplod_dir .'/'. $filename);
+            move_uploaded_file($fileTmp,$folder);
             return 'ok';
         }else{
             return 'error';
