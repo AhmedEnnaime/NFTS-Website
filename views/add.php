@@ -33,16 +33,16 @@ if(isset($_POST['add'])){
                   </svg></a>
                             <h1 class="form_title">Add Collection </h1>
                             <div class="form_div">
-                                <input type="text" name="name" class="form_input" placeholder="">
+                                <input type="text" name="name" class="form_input" placeholder="" required>
                                 <label for="" class="form_label">Collection Name</label>
                             </div>
                             <div class="form_div">
-                                <input type="text" name="artiste" class="form_input" placeholder="">
+                                <input type="text" name="artiste" class="form_input" placeholder="" required>
                                 <label for="" class="form_label">Collection Artiste</label>
                             </div>
                             <div>
 
-                                <input type="file" name="img" class="form_button" value="choisir un fichier"><br>
+                                <input type="file" name="img" class="form_button" value="choisir un fichier" required><br>
                                 <input type="submit" name="add" class="form_button_add" value="add">
                             </div>
                         </form>

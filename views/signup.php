@@ -46,6 +46,7 @@ if(isset($_POST['add'])){
                                     name="name"
                                     id="txt_email"
                                     placeholder="Fullname"
+                                    required
                                 />
                                 <label for="txt_email">Email</label>
                                 <input
@@ -53,6 +54,7 @@ if(isset($_POST['add'])){
                                     name="email"
                                     id="txt_email"
                                     placeholder="Email Address"
+                                    required
                                 />
                             
                                 <label for="txt_pass">Password</label>
@@ -61,6 +63,7 @@ if(isset($_POST['add'])){
                                     name="password"
                                     id="txt_pass"
                                     placeholder="Password"
+                                    required
                                 />
 
                                 <label for="txt_email">Birthday</label>
@@ -69,6 +72,7 @@ if(isset($_POST['add'])){
                                     name="birthday"
                                     id="txt_email"
                                     placeholder="Birthday"
+                                    required
                                 />
                                 <input type="submit" name="add" value="Sign Up" class="btn_sign" />
 

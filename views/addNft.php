@@ -34,12 +34,12 @@ if(isset($_POST['add'])){
                   </svg></a>
                 <h1 class="form_title">ADD Nft </h1>
                 <div class="form_div">
-                    <input type="text" name="name" class="form_input" placeholder="">
+                    <input type="text" name="name" class="form_input" placeholder="" required>
                     <label for="" class="form_label">Name</label>
                 </div>
 
                 <div class="form_select">
-                    <select name="collection_id" id="cars">
+                    <select name="collection_id" id="cars" required>
                         <?php
                             foreach($collections as $collection){
                                 echo '
@@ -52,18 +52,18 @@ if(isset($_POST['add'])){
                 </div>
 
                 <div class="form_div">
-                    <input type="number" name="price" class="form_input" placeholder="">
+                    <input type="number" name="price" class="form_input" placeholder="" required>
                     <label for="" class="form_label">Price </label>
                 </div>
                 <div class="form_description">
-                    <textarea id="description" name="description" class="form_input" placeholder="" rows="4" cols="50"></textarea>
+                    <textarea id="description" name="description" class="form_input" placeholder="" rows="4" cols="50" required></textarea>
                     <label for="" class="form_label">Description </label>
                     <div class="col-75">
                     </div>
                 </div>
                 <div class="button">
 
-                    <input type="file" name="img" class="form_button" value="choisir un fichier"><br>
+                    <input type="file" name="img" class="form_button" value="choisir un fichier" required><br>
 
                 </div>
                 <div>

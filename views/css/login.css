@@ -96,6 +96,11 @@ body {
     background: #292f45;
     display: inline-block;
 }
+.login-error{
+    color: red;
+    margin-left: 75%;
+    margin-top: 80%;
+}
 .login--createAccount--items h5 {
     text-align: center;
     position: relative;

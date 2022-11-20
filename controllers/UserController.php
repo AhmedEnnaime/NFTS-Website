@@ -17,7 +17,7 @@ class UserController{
                 
                 header('Location: ../views/home.php');
             }else{
-                echo $result;
+                echo '<span class="login-error">Email or password invalid</span>';
             }
         }
     }

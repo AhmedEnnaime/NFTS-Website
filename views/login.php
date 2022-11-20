@@ -46,6 +46,7 @@ if(isset($_POST['login'])){
                                 name="email"
                                 id="txt_email"
                                 placeholder="Email Address"
+                                required
                             />
                             <label for="txt_pass">Password</label>
                             <input
@@ -53,6 +54,7 @@ if(isset($_POST['login'])){
                                 name="password"
                                 id="txt_pass"
                                 placeholder="Password"
+                                required
                             />
                             <input type="submit" name="login" value="Login" class="btn_sign" />
                         </div>
