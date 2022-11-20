@@ -88,7 +88,7 @@ $latestSort = $data->latestSort();
                                         </button>
                                         </div>
 
-                                        <button class="place-bid-btn">Description</button>
+                                        <!-- <button class="place-bid-btn">Description</button> -->
 
                                     </figure>
 

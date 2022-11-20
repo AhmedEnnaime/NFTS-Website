@@ -175,11 +175,11 @@ $collections = $data->getAllCollections();
                                             <form action="./specialNfts.php" method="POST">
                                                 <input name="id" type="hidden" value="<?php echo $collection['id']; ?>">
                                                 <a href="#">
-                                                    <input type="submit" name="id" value="<?php echo $collection['id']; ?>">
+                                                    
                                                     <i
                                                         class="fa-solid fa-eye"
                                                     ></i
-                                                    >View NFTS</a
+                                                    > <input type="submit" value="View NFTS" style="border: none; background-color:transparent; cursor:pointer;"> </a
                                                 >
                                             </form>
                                             

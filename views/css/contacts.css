@@ -150,11 +150,10 @@ section .container .contactForm .formBox form .inputbox textarea{
     resize: none;
     font-size: 18px;
     font-weight: 300;
-    color:#333;
-    border: solid 1px;
     border-radius: 7px;
-    outline-color: #0D3169;
-    border-bottom: 1px solid #777;
+    border: none;
+    background-color: #777;
+    color: white;
 
 }
 section .container .contactForm .formBox form .inputbox input::placeholder{

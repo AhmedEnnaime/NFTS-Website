@@ -57,8 +57,6 @@ if(isset($_POST['id'])){
                                 </button>
                                 </div>
 
-                                <button class="place-bid-btn">Description</button>
-
                             </figure>
 
                             <div class="product-content">
