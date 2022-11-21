@@ -41,12 +41,16 @@ class Collection{
     }
 
     static public function update($data){
+        $file = $_FILES['img']['name'];
+        $folder = '../views/images/uploads/' . $file;
+        $fileTmp = $_FILES['img']['tmp_name'];
         $stmt = DB::connect()->prepare('UPDATE collection SET name = :name,artiste = :artiste,img = :img WHERE id = :id');
         $stmt->bindParam(':id',$data['id']);
         $stmt->bindParam(':name',$data['name']);
         $stmt->bindParam(':artiste',$data['artiste']);
         $stmt->bindParam(':img',$data['img']);
         if($stmt->execute()){
+            move_uploaded_file($fileTmp,$folder);
             return 'ok';
         }else{
             return 'error';

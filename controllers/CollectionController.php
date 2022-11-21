@@ -41,7 +41,7 @@ class CollectionsController{
                 'id'=> $_POST['id'],
                 'name'=>$_POST['name'],
                 'artiste'=>$_POST['artiste'],
-                'img'=>$_POST['img'],
+                'img'=>$_FILES['img']['name'],
             );
             $result = Collection::update($data);
             if($result == 'ok'){

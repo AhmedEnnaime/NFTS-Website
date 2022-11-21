@@ -45,6 +45,9 @@ class Nft{
     }
 
     static public function update($data){
+        $file = $_FILES['img']['name'];
+        $folder = '../views/images/uploads/' . $file;
+        $fileTmp = $_FILES['img']['tmp_name'];
         $stmt = DB::connect()->prepare('UPDATE nft SET name = :name,collection_id = :collection_id,description = :description,img = :img,price = :price WHERE id = :id');
         $stmt->bindParam(':id',$data['id']);
         $stmt->bindParam(':name',$data['name']);
@@ -53,6 +56,7 @@ class Nft{
         $stmt->bindParam(':img',$data['img']);
         $stmt->bindParam(':price',$data['price']);
         if($stmt->execute()){
+            move_uploaded_file($fileTmp,$folder);
             return 'ok';
         }else{
             return 'error';

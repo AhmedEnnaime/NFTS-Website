@@ -45,7 +45,7 @@ class NftController{
                 'name'=>$_POST['name'],
                 'collection_id'=>$_POST['collection_id'],
                 'description'=>$_POST['description'],
-                'img'=>$_POST['img'],
+                'img'=>$_FILES['img']['name'],
                 'price'=>$_POST['price'],
             );
             $result = Nft::update($data);

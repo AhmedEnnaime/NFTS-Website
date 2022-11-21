@@ -339,11 +339,7 @@
      */
   
     :root {
-  
-      /**
-       * typography
-       */
-  
+
       --fs-1: 38px;
       --fs-3: 35px;
       --fs-7: 15px;
@@ -367,7 +363,7 @@
      */
   
     .explore-product,
-    .footer-top { padding: 100px 0; }
+    .footer-top { padding: 200px 0; }
   
   }
   
@@ -378,10 +374,6 @@
   @media (min-width: 1024px) {
   
     :root {
-  
-      /**
-       * typography
-       */
   
       --fs-1: 45px;
       --fs-9: 16px;
@@ -406,7 +398,6 @@
      */
   
     .product-list,
-    .about-list,
     .top-seller-list { grid-template-columns: repeat(3, 1fr); }
   }
   
@@ -441,7 +432,6 @@
      */
   
     .product-list,
-    .about-list,
     .top-seller-list { grid-template-columns: repeat(4, 1fr); }
   
   }

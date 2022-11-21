@@ -18,22 +18,131 @@ if(isset($_POST['id'])){
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./css/nfts.css">
     <link rel="stylesheet" href="./css/layout.css" />
     <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/Heros.css">
      <link rel="stylesheet" href="./css/footer.css" />
      <link rel="stylesheet" href="./css/auctions.css">
 </head>
 <body>
    <?php include "./includes/nav.php"; ?>
+   <main id="main">
+   <section id="hero">
+                <div class="container">
+                    <div class="hero__wrapper">
+                        <div class="hero__wrapper--left">
+                            <h2>Discover, and collect</h2>
+                            <h2>extraordinary</h2>
+                            <h2>extraordinary</h2>
+                            <h2>
+                                <span>NFTs</span>
+                                
+                            </h2>
+                           
+                            
+                        </div>
+                        <div class="hero__wrapper--right">
+                            <div class="hero__shapes">
+                                <div class="hero__shape--circle"></div>
+                                
+                                <div class="hero__shape--circle1"></div>
+                                
+                                <div
+                                    class="hero__shape--circle hero-circle1"
+                                ></div>
+                                <div
+                                    class="hero__shape--circle hero-circle3"
+                                ></div>
+                                <div
+                                    class="hero__shape--circle1 hero-circle2"
+                                ></div>
+                            
+                            </div>
+                            <img
+                                src="./images/imgslider2.png"
+                                alt=""
+                                class="hero__image--person"
+                            />
+                            <img
+                                src="./images/img-bg-slider.png"
+                                alt=""
+                                class="hero__image--circle"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="heroBox">
+                <div class="container">
+
+                <?php
+                if($_SESSION['logged'] == true && $_SESSION['role'] == 0){
+                    echo '
+                        <div class="heroBox__wrapper">
+                            
+                            <div class="heroBox--item">
+                                <a href="./add.php" style="text-align: center;">
+                                <i class="fa-solid fa-photo-film" style="margin-bottom:20px ;"></i>
+                                <h3>Create Your Collection</h3>
+                                </a>
+                                
+                                <p>
+                                    Click Create and set up your collection. Add
+                                    social links, a description, profile & banner
+                                    images, and set a secondary sales fee.
+                                </p>
+                            </div>
+                            <div class="heroBox--item">
+                                <a href="./addNft.php" style="text-align: center;">
+                                    <i class="fa-solid fa-image" style="margin-bottom:20px ;"></i>
+                                    <h3>Add Your NFTs</h3>
+                                </a>
+                                
+                                <p>
+                                    Upload your work (image, video, audio, or 3D
+                                    art), add a title and description, and customize
+                                    your NFTs with properties, stats
+                                </p>
+                            </div>
+                        
+                        </div>
+                    ';
+                }else if($_SESSION['logged'] == true && $_SESSION['role'] == 1){
+                    echo '
+
+                        <div class="heroBox__wrapper">
+                                
+                                <div class="heroBox--item">
+                                    <a href="./addNft.php" style="text-align: center;">
+                                        <i class="fa-solid fa-image" style="margin-bottom:20px ;"></i>
+                                        <h3>Add Your NFTs</h3>
+                                    </a>
+                                    
+                                    <p>
+                                        Upload your work (image, video, audio, or 3D
+                                        art), add a title and description, and customize
+                                        your NFTs with properties, stats
+                                    </p>
+                                </div>
+                            
+                            </div>
+                    
+                    
+                    ';
+                }
+
+                ?>
+                   
+                </div>
+            </section>
     <section class="explore-product">
         <div class="container">
 
           <div class="section-header-wrapper">
 
             <h2 class="h2 section-title">Explore Product</h2>
-
-            <button class="btn btn-primary">Filter</button>
 
           </div>
 
@@ -108,6 +217,7 @@ if(isset($_POST['id'])){
 
         </div>
       </section>
+   </main>
       <?php include "./includes/footer.php"; ?>
 
         <script src="./js/menu.js"></script>
