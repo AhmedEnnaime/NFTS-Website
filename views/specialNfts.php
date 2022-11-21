@@ -48,7 +48,7 @@ if(isset($_POST['id'])){
 
                             <figure class="product-banner">
 
-                                <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+                                <img  src="./images/uploads/'.$nft['img'].'" alt="Dimond riding a blue body art">
 
                                 <div class="product-actions">
 

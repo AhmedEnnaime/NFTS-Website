@@ -25,6 +25,9 @@ class Nft{
     }
 
     static public function add($data){
+        $file = $_FILES['img']['name'];
+        $folder = '../views/images/uploads/' . $file;
+        $fileTmp = $_FILES['img']['tmp_name'];
         $stmt = DB::connect()->prepare('INSERT INTO nft (name,collection_id,description,img,price,user_id) values(:name,:collection_id,:description,:img,:price,:user_id)');
         $stmt->bindParam(':name',$data['name']);
         $stmt->bindParam(':collection_id',$data['collection_id']);
@@ -33,6 +36,7 @@ class Nft{
         $stmt->bindParam(':price',$data['price']);
         $stmt->bindParam(':user_id',$data['user_id']);
         if($stmt->execute()){
+            move_uploaded_file($fileTmp,$folder);
             return 'ok';
         }else{
             return 'error';

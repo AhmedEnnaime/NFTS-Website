@@ -16,6 +16,7 @@ $collections = $data->getAllCollections();
             href="image/01_header/favicon.ico"
             type="image/x-icon"
         />
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <title>NFTea</title>
         <!-- fontawsome cdn link -->
         <link
@@ -240,10 +241,6 @@ $collections = $data->getAllCollections();
         </main>
         <!-- main end -->
        <?php include "./includes/footer.php"; ?>
-        <!-- scroll -->
-        <div id="scroll--top">
-            <i class="fa-solid fa-angle-up"></i>
-        </div>
 
         <!-- scripts -->
         <script src="./js/menu.js"></script>

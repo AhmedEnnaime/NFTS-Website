@@ -97,7 +97,7 @@ $celebritys = $collections->mostCelebrity();
                         <div class="charts-card">
                           <p class="chart-title">Top Collections</p>
                           <div id="bar-chart">
-                              <div style="width: 500px;">
+                              <div class="graphe" style="width: 500px;">
                                   <canvas id="myChart"></canvas>
                               </div>
                               <script>
@@ -138,7 +138,7 @@ $celebritys = $collections->mostCelebrity();
                               </script>
                           </div>
                         </div>
-                        <div class="table">
+                        <div class="tableau">
                         <table >
                            
                             

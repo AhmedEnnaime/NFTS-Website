@@ -109,6 +109,9 @@ session_start();
                     ?>
                     
                 </div>
+                
             </div>
+            <i class="uil uil-bars sidebar"></i>
         </header>
         <!-- header end -->
+        <script src="../js/menu.js"></script>

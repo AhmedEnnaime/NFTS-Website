@@ -27,6 +27,8 @@ $latestSort = $data->latestSort();
 </head>
 <body>
    <?php include "./includes/nav.php"; ?>
+   
+   <main id="main">
     <section class="explore-product">
         <div class="container">
 
@@ -79,7 +81,7 @@ $latestSort = $data->latestSort();
 
                                     <figure class="product-banner">
 
-                                        <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+                                        <img  src="./images/uploads/<?php echo $asc['img']; ?>" alt="Dimond riding a blue body art">
 
                                         <div class="product-actions">
 
@@ -174,7 +176,7 @@ $latestSort = $data->latestSort();
 
                             <figure class="product-banner">
 
-                                <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+                                <img  src="./images/uploads/<?php echo $desc['img']; ?>" alt="Dimond riding a blue body art">
 
                                 <div class="product-actions">
 
@@ -182,8 +184,6 @@ $latestSort = $data->latestSort();
                                     <ion-icon name="heart"></ion-icon>
                                 </button>
                                 </div>
-
-                                <button class="place-bid-btn">Description</button>
 
                             </figure>
 
@@ -267,7 +267,7 @@ $latestSort = $data->latestSort();
 
                             <figure class="product-banner">
 
-                                <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+                                <img  src="./images/uploads/<?php echo $latest['img']; ?>" alt="Dimond riding a blue body art">
 
                                 <div class="product-actions">
 
@@ -275,8 +275,6 @@ $latestSort = $data->latestSort();
                                     <ion-icon name="heart"></ion-icon>
                                 </button>
                                 </div>
-
-                                <button class="place-bid-btn">Description</button>
 
                             </figure>
 
@@ -359,7 +357,7 @@ $latestSort = $data->latestSort();
 
                             <figure class="product-banner">
 
-                                <img src="./assets/images/explore-product-1.jpg" alt="Dimond riding a blue body art">
+                                <img  src="./images/uploads/<?php echo $nft['img']; ?>" alt="Dimond riding a blue body art">
 
                                 <div class="product-actions">
 
@@ -367,8 +365,6 @@ $latestSort = $data->latestSort();
                                     <ion-icon name="heart"></ion-icon>
                                 </button>
                                 </div>
-
-                                <button class="place-bid-btn">Description</button>
 
                             </figure>
 
@@ -447,6 +443,7 @@ $latestSort = $data->latestSort();
 
         </div>
       </section>
+      </main>
       <?php include "./includes/footer.php"; ?>
 
         <script src="./js/menu.js"></script>
