@@ -196,6 +196,7 @@
   .charts-card{
     margin: 0 auto;
   }
+
   
   /* ---------- MEDIA QUERIES ---------- */
   
@@ -271,6 +272,13 @@
       width: 60%;
     }
     .graphe{
-      width: 250px;
+      width: 220px;
     }
+  }
+
+  @media screen and (max-width: 447px){
+    .graphe{
+      width: 180px;
+    }
+
   }

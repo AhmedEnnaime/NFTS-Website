@@ -6,7 +6,7 @@ session_start();
  <header id="header">
             <div class="container">
                 <div class="navbar">
-                    <div class="navbar__item navbar__item--left">
+                    <div class="navbar__item navbar__item--left normal">
                         <div class="navbar__logo">
                             <a href="#">
                                 <img
@@ -111,6 +111,18 @@ session_start();
                 </div>
                 
             </div>
+            <div class="navbar__item navbar__item--left mobile">
+                        <div class="navbar__logo">
+                            <a href="#">
+                                <img
+                                    src="./images/logo1.png"
+                                    alt="Axies"
+                                    width="100px"
+                                    height="80px"
+                                />
+                            </a>
+                        </div>
+                    </div>
             <i class="uil uil-bars sidebar"></i>
         </header>
         <!-- header end -->
