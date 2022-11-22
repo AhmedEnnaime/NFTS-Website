@@ -162,7 +162,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
   
   .product-list {
@@ -283,6 +283,40 @@
     justify-content: space-between;
     align-items: center;
     font-size: var(--fs-8);
+  }
+
+  .search-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .search-form input{
+    border-radius: 13px;
+    height: 27px;
+    width: 30%;
+    background-color: transparent;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 1px solid white;
+    color: white;
+  }
+  .search-form input::placeholder{
+    color: white;
+  }
+  .search-form button{
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 30px;
+    height: 28px;
+  }
+  .search-form button i{
+    color: white;
+    font-size: 25px;
+  }
+  .back{
+    font-size: 40px;
+    color: white;
   }
   
   /*-----------------------------------*\

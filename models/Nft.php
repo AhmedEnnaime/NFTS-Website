@@ -152,5 +152,18 @@ class Nft{
         }
     }
 
+    static public function searchNft($data){
+        $search = $data['search'];
+        //die(print_r($data));
+        try{
+            $stmt = DB::connect()->prepare('SELECT * FROM nft WHERE name LIKE ?');
+            $stmt->execute(array("%".$search."%"));
+            $nfts = $stmt->fetchAll();
+            return $nfts;
+        }catch(PDOException $ex){
+            echo $ex->getMessage();
+        }     
+    }
+
 }
 ?>

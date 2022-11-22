@@ -2,10 +2,18 @@
 session_start();
 require_once "../controllers/NftController.php";
 $data = new NftController();
-$nfts = $data->getAllNfts();
 $ascSort = $data->ascSort();
 $descSort = $data->descSort();
 $latestSort = $data->latestSort();
+if(isset($_POST['find'])){
+    $data = new NftController();
+    $nfts = $data->findNfts();
+}else{
+    setcookie("choice", 4);
+    $data = new NftController();
+    $nfts = $data->getAllNfts();
+}
+
 ?>
 
 <html lang="en">
@@ -143,8 +151,9 @@ $latestSort = $data->latestSort();
         <div class="container">
 
           <div class="section-header-wrapper">
-
-            <h2 class="h2 section-title">Explore Product</h2>
+            <a href="./nfts.php"><i class="uil uil-location-arrow back"></i></a>
+            <h2 class="h2 section-title">Explore Nfts</h2>
+            
             <form action="" method="POST">
                 <select name="sort" class="btn btn-primary" id="sortOption">
                     <option class="All" value="All"> All </option>
@@ -157,13 +166,20 @@ $latestSort = $data->latestSort();
             </form>
            
           </div>
+          <form class="search-form" action="" method="POST">
+                <button name="find" type="submit"><i class="uil uil-search"></i></button>
+                <input type="text" name="search" placeholder="Search">
+            </form>
 
           <ul class="product-list">
             <script type="text/javascript">
+                // const backBtn = document.querySelector('.back');
+                // backBtn.addEventListener(('click'),()=>{
+                //     setcookie("choice", time() - 3600);
+                // })
                 let choice = 0;
                 const selectOption = document.querySelector('#sortOption')
                 selectOption.addEventListener(('change'), (event)=>{
-                    console.log(event.target.value)
                     if(event.target.value == "Sort by price asc"){
                        choice = 1;
 

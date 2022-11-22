@@ -107,6 +107,14 @@ class NftController{
         $latestSort = Nft::latestListed();
         return $latestSort;
     }
+
+    public function findNfts(){
+        if(isset($_POST['search'])){
+            $data = array('search'=>$_POST['search']);
+        }
+        $nfts = Nft::searchNft($data);
+        return $nfts; 
+    }
 }
 
 ?>
