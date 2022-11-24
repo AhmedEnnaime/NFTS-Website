@@ -6,8 +6,6 @@ class User{
 
     static public function login($data){
         $email = $data['email'];
-        $role = $data['role'];
-        $id = $data['id'];
         try{
             $query = 'SELECT * FROM user WHERE email=:email';
             $stmt = DB::connect()->prepare($query);
