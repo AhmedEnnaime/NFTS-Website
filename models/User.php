@@ -37,7 +37,7 @@ class User{
     }
 
     static public function getAll(){
-        $stmt = DB::connect()->prepare('SELECT * FROM user');
+        $stmt = DB::connect()->prepare('SELECT * FROM user WHERE role = 1');
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt = null;
@@ -99,5 +99,3 @@ class User{
     }
 
 }
-
-?>
