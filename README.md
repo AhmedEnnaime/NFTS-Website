@@ -12,7 +12,7 @@ To deploy this project you need to place it on your htdocs in xamp or www if you
 
 **Client:** HTML, CSS, Javascript
 
-**Server:** PHP
+**Server:** PHP, Mysql
 
 
 ## Authors
