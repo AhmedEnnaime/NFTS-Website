@@ -8,7 +8,11 @@ The following project is a webs application dedicated for two types of users adm
 
 To deploy this project you need to place it on your htdocs in xamp or www if you are using wamp.
 
+## Tech Stack
 
+**Client:** HTML, CSS, Javascript
+
+**Server:** PHP
 
 
 ## Authors
