@@ -20,6 +20,10 @@ To deploy this project you need to place it on your htdocs in xamp or www if you
 - [@AhmedEnnaime](https://github.com/AhmedEnnaime)
 
 
+## Feedback
+
+If you have any feedback, please reach out to me at ahmedennaime20@gmail.com
+
 ## Support
 
 For support, email ahmedennaime20@gmail.com or contact me on Linkedin.
