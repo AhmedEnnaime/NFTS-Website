@@ -14,6 +14,8 @@ To deploy this project you need to place it on your htdocs in xamp or www if you
 
 **Server:** PHP, Mysql
 
+**Architecture:** MVC
+
 
 ## Authors
 
